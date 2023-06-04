@@ -1,0 +1,28 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class fire : MonoBehaviour
+{
+    float inital, current;
+    float time = 2;
+    // Start is called before the first frame update
+    void Start()
+    {
+        inital = transform.position.x;
+        GetComponent<Rigidbody2D>().AddForce(transform.right *10, ForceMode2D.Impulse);
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        current = transform.position.x;
+        time -= Time.deltaTime;
+        if (time <= 0)
+        {
+            Destroy(gameObject);
+        }
+    }
+ 
+
+}
