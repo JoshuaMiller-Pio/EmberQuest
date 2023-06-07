@@ -11,7 +11,7 @@ public class Auratii : Enemy
 
     public GameObject player;
     bool playerInRange = false;
-
+    public LayerMask wall;
     SpriteRenderer spriteRenderer;
     float movementTime = 2;
     Auratii() : base(0,50,10)
@@ -77,7 +77,7 @@ public class Auratii : Enemy
         }
 
     }
-    
+
     IEnumerator walk()
     {
         float time = 0;
@@ -85,29 +85,49 @@ public class Auratii : Enemy
         CurrentLocation = transform.position;
         targetLocationleft = new Vector2(player.transform.position.x + 4, transform.position.y);
         targetLocationright = new Vector2(player.transform.position.x - 4, transform.position.y);
-        if (transform.position.x > player.transform.position.x)
+        if (transform.position.x >= player.transform.position.x && !isagainstwall("right"))
         {
+            spriteRenderer.flipX = false;
             while (time < 1)
             {
-                transform.position = UnityEngine.Vector2.Lerp(CurrentLocation, targetLocationleft, time / 1);
+                RigComp.MovePosition(UnityEngine.Vector2.Lerp(CurrentLocation, targetLocationleft, time / 1));
                 time += Time.deltaTime;
                 yield return null;
             }
             transform.position = targetLocationleft;
-            spriteRenderer.flipX = false;
 
         }
-        else
+        else if(transform.position.x <= player.transform.position.x && !isagainstwall("left"))
         {
+            spriteRenderer.flipX = true;
             while (time < 1)
             {
-                transform.position = UnityEngine.Vector2.Lerp(CurrentLocation, targetLocationright, time / 1);
+                RigComp.MovePosition(UnityEngine.Vector2.Lerp(CurrentLocation, targetLocationright, time / 1));
+
                 time += Time.deltaTime;
                 yield return null;
             }
             transform.position = targetLocationright;
-            spriteRenderer.flipX = true;
         }
     }
+    bool isagainstwall(string checker)
+    {
+        if (Physics2D.Raycast(transform.position, -transform.right, 1f, wall) && checker == "left"/*left*/ )
+        {
+            //touching wall
+            Debug.Log("wall");
+            return true;
+
+        }
+       else if(Physics2D.Raycast(transform.position, transform.right, 1f, wall) && checker == "right")
+        {
+            Debug.Log("wall");
+            return true;
+        }
+        //not touching wall
+        return false;
+
+    }
+
 
 }

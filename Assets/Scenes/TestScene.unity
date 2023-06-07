@@ -213,7 +213,7 @@ Transform:
   m_GameObject: {fileID: 1310741261}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -0.493, y: 14.9, z: 0}
-  m_LocalScale: {x: 0.01, y: 75.36, z: 1}
+  m_LocalScale: {x: 0.043, y: 75.36, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1457770807}
@@ -274,9 +274,9 @@ Rigidbody2D:
   m_GameObject: {fileID: 1310741261}
   m_BodyType: 0
   m_Simulated: 1
-  m_UseFullKinematicContacts: 0
+  m_UseFullKinematicContacts: 1
   m_UseAutoMass: 0
-  m_Mass: 22.652946
+  m_Mass: 1000000
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 0
@@ -289,7 +289,7 @@ Rigidbody2D:
     m_Bits: 0
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 7
 --- !u!212 &1310741265
 SpriteRenderer:
@@ -532,7 +532,7 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 22.652946
+  m_Mass: 1000000
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 0
@@ -677,6 +677,30 @@ PrefabInstance:
       propertyPath: m_IsTrigger
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 4524942817580739960, guid: 4f8047538cbf4364e955387024f5bfc9, type: 3}
+      propertyPath: m_Mass
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4524942817580739960, guid: 4f8047538cbf4364e955387024f5bfc9, type: 3}
+      propertyPath: m_BodyType
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4524942817580739960, guid: 4f8047538cbf4364e955387024f5bfc9, type: 3}
+      propertyPath: m_Constraints
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 4524942817580739960, guid: 4f8047538cbf4364e955387024f5bfc9, type: 3}
+      propertyPath: m_UseAutoMass
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4524942817580739960, guid: 4f8047538cbf4364e955387024f5bfc9, type: 3}
+      propertyPath: m_CollisionDetection
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4524942817580739960, guid: 4f8047538cbf4364e955387024f5bfc9, type: 3}
+      propertyPath: m_IncludeLayers.m_Bits
+      value: 64
+      objectReference: {fileID: 0}
     - target: {fileID: 4524942817580739962, guid: 4f8047538cbf4364e955387024f5bfc9, type: 3}
       propertyPath: m_Name
       value: Fishman
@@ -691,7 +715,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4524942817580739966, guid: 4f8047538cbf4364e955387024f5bfc9, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.93
+      value: -28.11
       objectReference: {fileID: 0}
     - target: {fileID: 4524942817580739966, guid: 4f8047538cbf4364e955387024f5bfc9, type: 3}
       propertyPath: m_LocalPosition.y
@@ -776,7 +800,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6015655049718850705, guid: 9b96f8143db579741b53d873f0a2c6eb, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -4.909
+      value: -17.49
       objectReference: {fileID: 0}
     - target: {fileID: 6015655049718850705, guid: 9b96f8143db579741b53d873f0a2c6eb, type: 3}
       propertyPath: m_LocalPosition.y
