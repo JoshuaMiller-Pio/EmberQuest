@@ -11,6 +11,7 @@ public class PlayerController : MonoBehaviour
     public LayerMask ground;
     public static float angle;
     SpriteRenderer torsoRend;
+    public bool inConversation;
     // Start is called before the first frame update
     void Start()
     {
@@ -18,6 +19,7 @@ public class PlayerController : MonoBehaviour
         CollComp = GetComponent<BoxCollider2D>();
         colorchange();
         torsoRend = torso.GetComponent<SpriteRenderer>();
+        inConversation = true;
     }
 
     // Update is called once per frame
@@ -30,24 +32,28 @@ public class PlayerController : MonoBehaviour
 
     void onKeyDown()
     {
-        float DirX = Input.GetAxis("Horizontal");
-        
-        //jump
-        if(Input.GetButtonDown("Jump") && isGrounded())
+        if(inConversation == false)
         {
-            rigComp.velocity = new Vector2(rigComp.velocity.x, 5f);
-        }
-        //left  and right movement
-        rigComp.velocity = new Vector2((DirX * 5f), rigComp.velocity.y);
-        if (DirX<0)
-        {
-            legs.GetComponent<SpriteRenderer>().flipX = true;
-        }
-        else if (DirX > 0)
-        {
-            legs.GetComponent<SpriteRenderer>().flipX = false;
+            float DirX = Input.GetAxis("Horizontal");
 
+            //jump
+            if (Input.GetButtonDown("Jump") && isGrounded())
+            {
+                rigComp.velocity = new Vector2(rigComp.velocity.x, 5f);
+            }
+            //left  and right movement
+            rigComp.velocity = new Vector2((DirX * 5f), rigComp.velocity.y);
+            if (DirX < 0)
+            {
+                legs.GetComponent<SpriteRenderer>().flipX = true;
+            }
+            else if (DirX > 0)
+            {
+                legs.GetComponent<SpriteRenderer>().flipX = false;
+
+            }
         }
+        
     }
 
     void MouseMovement()
@@ -71,8 +77,22 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    
+    public void ConversationOn()
+    {
+        inConversation = true; 
+        
+    }
 
+    public void ConversationOff()
+    {
+        inConversation = false; 
+        
+    }
+
+    public bool IsInConversation() 
+    { 
+        return inConversation; 
+    }
     bool isGrounded()
     {
         
