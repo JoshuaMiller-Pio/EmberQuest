@@ -19,7 +19,7 @@ public class PlayerController : MonoBehaviour
         CollComp = GetComponent<BoxCollider2D>();
         colorchange();
         torsoRend = torso.GetComponent<SpriteRenderer>();
-        inConversation = false;
+        inConversation = true;
     }
 
     // Update is called once per frame
