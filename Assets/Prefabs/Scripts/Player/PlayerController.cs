@@ -12,12 +12,14 @@ public class PlayerController : MonoBehaviour
     public static float angle;
     SpriteRenderer torsoRend;
     public bool inConversation;
+    float DirX;
+    private Animator LegAniComp;
     // Start is called before the first frame update
     void Start()
     {
-        rigComp = GetComponent<Rigidbody2D>();
+        LegAniComp = legs.GetComponent<Animator>();
+       rigComp = GetComponent<Rigidbody2D>();
         CollComp = GetComponent<BoxCollider2D>();
-        colorchange();
         torsoRend = torso.GetComponent<SpriteRenderer>();
         inConversation = true;
     }
@@ -25,16 +27,19 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        onKeyDown();
         MouseMovement();
+        onKeyDown();
  
     }
 
+    #region movement
+
+    //detects key press and moves the player
     void onKeyDown()
     {
         if(inConversation == false)
         {
-            float DirX = Input.GetAxis("Horizontal");
+             DirX = Input.GetAxis("Horizontal");
 
             //jump
             if (Input.GetButtonDown("Jump") && isGrounded())
@@ -45,17 +50,28 @@ public class PlayerController : MonoBehaviour
             rigComp.velocity = new Vector2((DirX * 5f), rigComp.velocity.y);
             if (DirX < 0)
             {
+                isWalking();
                 legs.GetComponent<SpriteRenderer>().flipX = true;
             }
             else if (DirX > 0)
             {
+                isWalking();
                 legs.GetComponent<SpriteRenderer>().flipX = false;
 
             }
+            else
+            {
+                isIdle();
+            }
+
         }
         
     }
+    #endregion
 
+
+
+    #region Mouse Detection
     void MouseMovement()
     {
         Vector2 direction = Camera.main.ScreenToWorldPoint(Input.mousePosition) - transform.position;
@@ -76,7 +92,10 @@ public class PlayerController : MonoBehaviour
 
         }
     }
+    #endregion
 
+
+    #region bool checks
     public void ConversationOn()
     {
         inConversation = true; 
@@ -89,6 +108,7 @@ public class PlayerController : MonoBehaviour
         
     }
 
+
     public bool IsInConversation() 
     { 
         return inConversation; 
@@ -99,11 +119,20 @@ public class PlayerController : MonoBehaviour
         return Physics2D.Raycast(transform.position, -transform.up, 1f, ground);
          
     }
-    
+    #endregion
 
-    void colorchange()
+
+
+    #region AnimationCalls
+    void isWalking()
     {
-        Debug.Log("colour change");
-        torsoRend.color = Color.Lerp(Color.white, Color.blue, Mathf.PingPong(Time.time * 10, 1));
+        LegAniComp.SetBool("isWalking", true);
     }
+    void isIdle()
+    {
+
+        LegAniComp.SetBool("isWalking", false);
+
+    }
+    #endregion
 }

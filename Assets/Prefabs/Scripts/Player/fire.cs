@@ -16,6 +16,13 @@ public class fire : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        BurnOut();
+    
+    }
+
+    //after time 2 seconds fire burns off
+    void BurnOut()
+    {
         current = transform.position.x;
         time -= Time.deltaTime;
         if (time <= 0)
@@ -23,6 +30,5 @@ public class fire : MonoBehaviour
             Destroy(gameObject);
         }
     }
- 
 
 }
