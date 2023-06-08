@@ -22,6 +22,7 @@ public class PlayerAttack : MonoBehaviour
         OnButtonClick();
 
     }
+    //left click basic attack. right click special. "Q" ult
     void OnButtonClick()
     {
         SpecialFiretime -= Time.deltaTime;
