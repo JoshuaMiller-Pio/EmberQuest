@@ -116,7 +116,7 @@ public class PlayerController : MonoBehaviour
     bool isGrounded()
     {
         
-        return Physics2D.Raycast(transform.position, -transform.up, 1f, ground);
+        return Physics2D.Raycast(transform.position, -transform.up, 1.5f, ground);
          
     }
     #endregion
