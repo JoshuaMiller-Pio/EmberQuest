@@ -9,20 +9,21 @@ public class Auratii : Enemy
 
     Rigidbody2D RigComp;
 
-    public GameObject player;
+    public GameObject player, feelers;
     bool playerInRange = false;
     public LayerMask wall;
     SpriteRenderer spriteRenderer;
+    CircleCollider2D feeler;
     float movementTime = 2;
     Auratii() : base(0,50,10)
     {
 
     }
-    private void Start()
+    private void Awake()
     {
         RigComp = GetComponent<Rigidbody2D>();
         spriteRenderer = GetComponent<SpriteRenderer>();
-        
+        feeler = feelers.GetComponent<CircleCollider2D>();
     }
 
     private void Update()
@@ -40,14 +41,16 @@ public class Auratii : Enemy
         Debug.Log(move);
         if (move > 0)
         {
-           spriteRenderer.flipX = true;
+            spriteRenderer.flipX = true;
+            feeler.offset = new Vector2(5,feeler.offset.y);
         }
         else
         {
-           spriteRenderer.flipX = false;
+            spriteRenderer.flipX = false;
+            feeler.offset = new Vector2(0, feeler.offset.y);
 
         }
-            RigComp.velocity = new Vector2(moveDir[move] * 5, RigComp.velocity.y);
+        RigComp.velocity = new Vector2(moveDir[move] * 5, RigComp.velocity.y);
         movementTime = 2;
            
 

@@ -21,14 +21,14 @@ public class PlayerController : MonoBehaviour
        rigComp = GetComponent<Rigidbody2D>();
         CollComp = GetComponent<BoxCollider2D>();
         torsoRend = torso.GetComponent<SpriteRenderer>();
-        inConversation = true;
+        inConversation = false;
     }
 
     // Update is called once per frame
     void Update()
     {
-        MouseMovement();
         onKeyDown();
+        MouseMovement();
  
     }
 
