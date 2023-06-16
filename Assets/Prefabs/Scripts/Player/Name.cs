@@ -7,11 +7,9 @@ using UnityEngine.UI;
 public class Name : MonoBehaviour
 {
     public TMP_InputField input;
-    public Button confirm;
     // Start is called before the first frame update
     void Start()
     {
-        confirm.onClick.AddListener(AddName);
     }
 
     // Update is called once per frame
@@ -22,7 +20,7 @@ public class Name : MonoBehaviour
    public  void AddName() 
     {
         Debug.Log(input.text.ToString());
-        GameManager.Instance.name = input.text.ToString();
+        GameManager.Instance.playerName = input.text.ToString();
 
     }
 }
