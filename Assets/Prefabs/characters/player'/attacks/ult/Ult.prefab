@@ -13,10 +13,10 @@ GameObject:
   - component: {fileID: 3020354431149375576}
   - component: {fileID: 3020354431149375575}
   - component: {fileID: 3020354431149375574}
-  - component: {fileID: 9195388061153112674}
+  - component: {fileID: -1366979566345401672}
   m_Layer: 0
   m_Name: Ult
-  m_TagString: Untagged
+  m_TagString: Fire
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -164,7 +164,7 @@ BoxCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0.81402016, y: 0.006374687}
@@ -180,7 +180,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 2.3094597, y: 1.7521846}
   m_EdgeRadius: 0
---- !u!114 &9195388061153112674
+--- !u!114 &-1366979566345401672
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -189,6 +189,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 1179426699060990523}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 45e3e7474ef4db94a9ef4eb077fde1ce, type: 3}
+  m_Script: {fileID: 11500000, guid: eff9e580dc674ab4583cc2e63460ef81, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 

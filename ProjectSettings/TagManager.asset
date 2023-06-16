@@ -9,6 +9,8 @@ TagManager:
   - VillageSwitch
   - CaveSwitch
   - EnemyProjectile
+  - Finder
+  - Fire
   layers:
   - Default
   - TransparentFX

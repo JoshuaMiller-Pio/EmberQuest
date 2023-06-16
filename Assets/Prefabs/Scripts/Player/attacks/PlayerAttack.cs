@@ -6,15 +6,14 @@ using UnityEngine.UIElements;
 
 public class PlayerAttack : MonoBehaviour
 {
-    float SpecialFiretime = 2 ;
-    float ultFiretime = 1 ;
+    float SpecialFiretime = 1 ;
+    float ultFiretime = 1;
     float BaseFiretime = 1 ;
+
     public GameObject spawn, attack, specialAttack, ult;
-   
+
     // Start is called before the first frame update
-    void Start()
-    {
-    }
+
 
     // Update is called once per frame
     void Update()
@@ -30,8 +29,8 @@ public class PlayerAttack : MonoBehaviour
         
             if (Input.GetMouseButton(0) && BaseFiretime <= 0)
             {
-                BaseFiretime = 1;
                 Instantiate(attack, spawn.transform.position, Quaternion.AngleAxis(PlayerController.angle, Vector3.forward));
+                BaseFiretime = 1;
             }
            
 
