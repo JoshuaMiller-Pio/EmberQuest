@@ -12,7 +12,7 @@ public class PlayerController : MonoBehaviour
     public LayerMask ground;
     public static float angle;
     SpriteRenderer torsoRend;
-    public bool inConversation;
+    
     float DirX;
     private Animator LegAniComp;
 
@@ -35,7 +35,7 @@ public class PlayerController : MonoBehaviour
         rigComp = GetComponent<Rigidbody2D>();
         CollComp = GetComponent<BoxCollider2D>();
         torsoRend = torso.GetComponent<SpriteRenderer>();
-        inConversation = false;
+        
     }
     // Start is called before the first frame update
     void Start()
@@ -128,24 +128,7 @@ public class PlayerController : MonoBehaviour
     #endregion
 
 
-    #region bool checks
-    public void ConversationOn()
-    {
-        inConversation = true; 
-        
-    }
-
-    public void ConversationOff()
-    {
-        inConversation = false; 
-        
-    }
-
-
-    public bool IsInConversation() 
-    { 
-        return inConversation; 
-    }
+    #region bool checks 
     bool isGrounded()
     {
         
