@@ -10,13 +10,13 @@ GameObject:
   m_Component:
   - component: {fileID: 6726418426821737533}
   - component: {fileID: 2188239058758190710}
-  - component: {fileID: 3432923192370732818}
   - component: {fileID: 5537274650572824957}
   - component: {fileID: 4335882669805357079}
   - component: {fileID: 7244450573218832244}
+  - component: {fileID: -4747509087900833292}
   m_Layer: 0
   m_Name: BaseAttack
-  m_TagString: Untagged
+  m_TagString: Fire
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -88,18 +88,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &3432923192370732818
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4657424449745697853}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 45e3e7474ef4db94a9ef4eb077fde1ce, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!61 &5537274650572824957
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -192,3 +180,15 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
+--- !u!114 &-4747509087900833292
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4657424449745697853}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 25a38e74492942849b7772751252dd80, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
