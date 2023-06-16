@@ -38,7 +38,6 @@ public class Auratii : Enemy
     {
        int move =  Random.Range(0, 2);
         float[] moveDir = new float[] { -1, 1 };
-        Debug.Log(move);
         if (move > 0)
         {
             spriteRenderer.flipX = true;

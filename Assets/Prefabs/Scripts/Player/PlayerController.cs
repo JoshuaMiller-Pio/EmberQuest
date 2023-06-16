@@ -5,6 +5,7 @@ using UnityEngine.UIElements;
 
 public class PlayerController : MonoBehaviour
 {
+
     Rigidbody2D rigComp;
     BoxCollider2D CollComp;
     public GameObject legs, torso,arm;
@@ -14,14 +15,33 @@ public class PlayerController : MonoBehaviour
     public bool inConversation;
     float DirX;
     private Animator LegAniComp;
-    // Start is called before the first frame update
-    void Start()
+
+    private float Health;
+
+    #region Properties
+
+    public float health
+    {
+        set { Health = value; }
+        get { return Health; }
+    }
+
+
+    #endregion
+
+    private void Awake()
     {
         LegAniComp = legs.GetComponent<Animator>();
-       rigComp = GetComponent<Rigidbody2D>();
+        rigComp = GetComponent<Rigidbody2D>();
         CollComp = GetComponent<BoxCollider2D>();
         torsoRend = torso.GetComponent<SpriteRenderer>();
         inConversation = false;
+    }
+    // Start is called before the first frame update
+    void Start()
+    {
+       
+        health = 10;
     }
 
     // Update is called once per frame
@@ -69,7 +89,20 @@ public class PlayerController : MonoBehaviour
     }
     #endregion
 
+    void isDead()
+    {
+        GameManager.Instance.PlayerDead();
+    }
 
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if(collision.gameObject.tag == "EnemyProjectile")
+        {
+            //will change to enemey damage
+            health -= 1;
+        }
+    }
 
     #region Mouse Detection
     void MouseMovement()

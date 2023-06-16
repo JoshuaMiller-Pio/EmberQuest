@@ -222,9 +222,10 @@ GameObject:
   m_Component:
   - component: {fileID: 309164217}
   - component: {fileID: 309164216}
+  - component: {fileID: 309164218}
   m_Layer: 0
   m_Name: return_normal
-  m_TagString: Untagged
+  m_TagString: VillageSwitch
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -289,6 +290,18 @@ Transform:
   m_Father: {fileID: 1194669309}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &309164218
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 309164215}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 198c50852aac41b45b5b8297dd1e1541, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &531735532 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3754311778186282613, guid: 3c3e19e135af3254faf16d41ac7f21a1, type: 3}
@@ -78111,9 +78124,10 @@ GameObject:
   m_Component:
   - component: {fileID: 1289105941}
   - component: {fileID: 1289105942}
+  - component: {fileID: 1289105943}
   m_Layer: 0
   m_Name: end
-  m_TagString: Untagged
+  m_TagString: VillageSwitch
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -78178,6 +78192,18 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 3.196169, y: 3.933361}
   m_EdgeRadius: 0
+--- !u!114 &1289105943
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1289105940}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 198c50852aac41b45b5b8297dd1e1541, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1411219144
 GameObject:
   m_ObjectHideFlags: 0
