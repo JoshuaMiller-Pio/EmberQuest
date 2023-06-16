@@ -9,6 +9,8 @@ public class DialogueManager : MonoBehaviour
     public bool gotPlants;
     public bool ArvinQuestDone;
     public bool GotEvidence;
+    public bool inConversation;
+    public bool inMenu;
     // Start is called before the first frame update
     void Start()
     {
@@ -17,6 +19,8 @@ public class DialogueManager : MonoBehaviour
         gotPlants = false;
         GotEvidence = false;
         ArvinQuestDone = false;
+        inConversation = true;
+        inMenu = false;
     }
 
     #region Get Bools
@@ -43,6 +47,17 @@ public class DialogueManager : MonoBehaviour
     public bool CheckArvinQuest()
     {
         return ArvinQuestDone;
+    }
+
+
+    public bool CheckInConversation()
+    {
+        return inConversation;
+    }
+
+    public bool CheckInMenu()
+    {
+        return inMenu;
     }
     #endregion
 
@@ -71,10 +86,35 @@ public class DialogueManager : MonoBehaviour
     {
         ArvinQuestDone=true;
     }
+
+    public void ConversationOn()
+    {
+        inConversation = true;
+
+    }
+
+    public void InMenuOn()
+    {
+        inMenu = true;
+
+    }
+
+    public void ConversationOff()
+    {
+        inConversation = false;
+
+    }
+
+    public void InMenuOff()
+    {
+        inMenu = false;
+
+    }
     #endregion
     // Update is called once per frame
     void Update()
     {
         
     }
+   
 }
