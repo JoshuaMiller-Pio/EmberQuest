@@ -9,8 +9,9 @@ public class GameManager : Singleton<GameManager>
     // Start is called before the first frame update
     private string _PlayerName;
     public bool HasHerbs;
-
+    int _Gold, _Health, _HealthPotions;
     private int _NumOfHerbs;
+
 
     #region Properties
     public string playerName
@@ -22,6 +23,21 @@ public class GameManager : Singleton<GameManager>
     {
         set { _NumOfHerbs = value; }
         get { return _NumOfHerbs;}
+    }
+    public int gold
+    {
+        set { _Gold = value; }
+        get { return _Gold; }
+    }
+    public int health
+    {
+        set { _Health = value; }
+        get { return _Health; }
+    }
+    public int healthPotions
+    {
+        set { _HealthPotions = value; }
+        get { return _HealthPotions; }
     }
 
     #endregion
@@ -37,6 +53,7 @@ public class GameManager : Singleton<GameManager>
         {
             HasHerbs = true;
         }
+        
     }
 
     public void PlayerDead()

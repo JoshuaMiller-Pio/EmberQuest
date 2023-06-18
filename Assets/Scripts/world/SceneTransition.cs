@@ -16,21 +16,27 @@ public class SceneTransition : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-       if(StartTime == true)
+       if(StartTime == true && gameObject.tag == "VillageSwitch")
        {
             time -= Time.deltaTime;
-            sceneSwitch();
+            sceneSwitchVillage();
        }
+        if (StartTime == true && gameObject.tag == "CaveSwitch")
+        {
+            Debug.Log("enter cave");
+            time -= Time.deltaTime;
+            sceneCaveVillage();
+        }
     }
     private void OnTriggerStay2D(Collider2D other)
     {
-        if(other.tag == "Player")
+        if(other.tag == "Player" )
         {
             StartTime = true;
             
         }
     }
-    void sceneSwitch()
+    void sceneSwitchVillage()
     {
         if(time <= 0)
         {
@@ -38,6 +44,15 @@ public class SceneTransition : MonoBehaviour
 
         }
         
+    }
+    void sceneCaveVillage()
+    {
+        if (time <= 0)
+        {
+            GameManager.Instance.CaveTrans();
+
+        }
+
     }
     private void OnTriggerExit2D(Collider2D other)
     {

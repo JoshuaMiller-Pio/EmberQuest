@@ -4,13 +4,7 @@ using UnityEngine;
 
 public class DialogueManager : MonoBehaviour
 {
-    public bool cordFirstDone;
-    public bool ArvinFirstDone;
-    public bool gotPlants;
-    public bool ArvinQuestDone;
-    public bool GotEvidence;
-    public bool inConversation;
-    public bool inMenu;
+    public bool cordFirstDone, ArvinFirstDone ,gotPlants, ArvinQuestDone, GotEvidence, inConversation, inMenu;
     // Start is called before the first frame update
     void Start()
     {
@@ -114,6 +108,11 @@ public class DialogueManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (GameManager.Instance.HasHerbs && !gotPlants) 
+        {
+            gotPlants = GameManager.Instance.HasHerbs;
+
+        }
         
     }
    
