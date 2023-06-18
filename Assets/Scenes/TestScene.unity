@@ -663,6 +663,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Auratii
       objectReference: {fileID: 0}
+    - target: {fileID: 8853964809933152564, guid: 3c3e19e135af3254faf16d41ac7f21a1, type: 3}
+      propertyPath: m_TagString
+      value: Enemy
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

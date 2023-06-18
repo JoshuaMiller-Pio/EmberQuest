@@ -48,7 +48,6 @@ public class FireAttacks_SuperClass : MonoBehaviour
         if(!(collision.tag == "Player" || collision.tag == "Finder" || collision.tag == "fire") && !PassThru )
         {
             Extinguish();
-            Debug.Log(collision.gameObject.tag);
         }
     }
     void Extinguish()

@@ -19,7 +19,6 @@ public class Name : MonoBehaviour
     }
    public  void AddName() 
     {
-        Debug.Log(input.text.ToString());
         GameManager.Instance.playerName = input.text.ToString();
 
     }
