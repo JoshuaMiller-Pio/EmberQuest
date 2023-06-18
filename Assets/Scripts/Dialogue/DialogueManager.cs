@@ -4,8 +4,10 @@ using UnityEngine;
 
 public class DialogueManager : MonoBehaviour
 {
-    public bool cordFirstDone, ArvinFirstDone ,gotPlants, ArvinQuestDone, GotEvidence, inConversation, inMenu;
+    [SerializeField]
+    public static bool cordFirstDone, ArvinFirstDone ,gotPlants, ArvinQuestDone, GotEvidence, inConversation, inMenu, fitsFirstDone, narratorFirstDone;
     // Start is called before the first frame update
+    [SerializeField]
     void Start()
     {
         cordFirstDone = false;
@@ -15,6 +17,7 @@ public class DialogueManager : MonoBehaviour
         ArvinQuestDone = false;
         inConversation = true;
         inMenu = false;
+        narratorFirstDone = false;
     }
 
     #region Get Bools
@@ -93,6 +96,11 @@ public class DialogueManager : MonoBehaviour
 
     }
 
+    public void NarratorFirstDone()
+    {
+        narratorFirstDone = true;
+
+    }
     public void ConversationOff()
     {
         inConversation = false;
@@ -111,9 +119,37 @@ public class DialogueManager : MonoBehaviour
         if (GameManager.Instance.HasHerbs && !gotPlants) 
         {
             gotPlants = GameManager.Instance.HasHerbs;
-
         }
-        
+
+        if (GameManager.Instance.hasDocs && !GotEvidence)
+        {
+            GotEvidence = GameManager.Instance.hasDocs;
+        }
+
+        if (GameManager.Instance.arvinFirst && !ArvinFirstDone)
+        {
+            ArvinFirstDone = GameManager.Instance.arvinFirst;
+        }
+
+        if (GameManager.Instance.arvinQuestDone && !ArvinQuestDone)
+        {
+            ArvinFirstDone = GameManager.Instance.arvinFirst;
+        }
+
+        if (GameManager.Instance.fitsFirst && !fitsFirstDone)
+        {
+            fitsFirstDone = GameManager.Instance.fitsFirst;
+        }
+
+        if (GameManager.Instance.cordFirst && !cordFirstDone)
+        {
+            cordFirstDone = GameManager.Instance.cordFirst;
+        }
+
+        if (GameManager.Instance.narratorFirst && !narratorFirstDone)
+        {
+            narratorFirstDone = GameManager.Instance.narratorFirst;
+        }
     }
    
 }

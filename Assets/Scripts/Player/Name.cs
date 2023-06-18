@@ -24,7 +24,7 @@ public class Name : MonoBehaviour
 
     }
 
-    public void UpdateName()
+    public  void UpdateName()
     {
         foreach (var slot in playerNameSlots) 
         {

@@ -8,7 +8,7 @@ public class GameManager : Singleton<GameManager>
 {
     // Start is called before the first frame update
     private string _PlayerName;
-    public bool HasHerbs;
+    public bool HasHerbs, cordFirst, arvinFirst, fitsFirst, hasDocs, arvinQuestDone, narratorFirst;
     int _Gold, _Health, _HealthPotions;
     private int _NumOfHerbs;
 
@@ -53,7 +53,31 @@ public class GameManager : Singleton<GameManager>
         {
             HasHerbs = true;
         }
-        
+
+        if (DialogueManager.cordFirstDone)
+        {
+            cordFirst = true;
+        }
+
+        if (DialogueManager.ArvinFirstDone)
+        {
+            arvinFirst = true;
+        }
+
+        if (DialogueManager.ArvinQuestDone)
+        {
+            arvinQuestDone = true;
+        }
+
+        if(DialogueManager.GotEvidence) 
+        {
+            hasDocs = true;
+        }
+
+        if (DialogueManager.narratorFirstDone)
+        {
+            narratorFirst = true;
+        }
     }
 
     public void PlayerDead()
