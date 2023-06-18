@@ -43,7 +43,6 @@ public class PlantPickup : MonoBehaviour
 
     private void pickup()
     {
-            Debug.Log("pick");
         if (Input.GetKeyDown("e"))
         {
             hasRun = true;
