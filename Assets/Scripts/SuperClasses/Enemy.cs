@@ -13,12 +13,13 @@ public class Enemy:MonoBehaviour
     float movementTime = 2;
     SpriteRenderer spriteRenderer;
     CircleCollider2D feeler;
+    int move;
     Rigidbody2D RigComp;
     public GameObject player, feelers;
     public LayerMask wall;
-
+    bool attackRange = false;
     States CurrentState;
-    enum States {Patrol, Attack, Search}
+    enum States {Patrol, Attack, Chase}
 
 
 
@@ -49,11 +50,14 @@ public class Enemy:MonoBehaviour
         RigComp = GetComponent<Rigidbody2D>();
         spriteRenderer = GetComponent<SpriteRenderer>();
         feeler = feelers.GetComponent<CircleCollider2D>();
+        player = GameObject.FindGameObjectWithTag("Player");
     }
 
     private void Update()
     {
         movementTime -= Time.deltaTime;
+        SpriteOrientation();
+        Debug.Log(attackRange);
         if (!playerInRange && movementTime <= 0 && (CurrentState == States.Patrol))
         {
             enemyRandomMovement();
@@ -63,8 +67,22 @@ public class Enemy:MonoBehaviour
     #region Movement
     void enemyRandomMovement()
     {
-        int move = UnityEngine.Random.Range(0, 2);
+         move = UnityEngine.Random.Range(0, 2);
         float[] moveDir = new float[] { -1, 1 };
+        RigComp.velocity = new Vector2(moveDir[move] * 5, RigComp.velocity.y);
+        movementTime = 2;
+
+
+
+    }
+    void TargetedMovement()
+    {
+        CurrentState = States.Chase;
+        StartCoroutine(walk());
+    }
+
+    void SpriteOrientation()
+    {
         if (move > 0)
         {
             spriteRenderer.flipX = true;
@@ -76,34 +94,24 @@ public class Enemy:MonoBehaviour
             feeler.offset = new Vector2(0, feeler.offset.y);
 
         }
-        RigComp.velocity = new Vector2(moveDir[move] * 5, RigComp.velocity.y);
-        movementTime = 2;
-
-
-
     }
-    void TargetedMovement()
-    {
-        StartCoroutine(walk());
-        CurrentState = States.Search;
-    }
-
     IEnumerator walk()
     {
         float time = 0;
-        bool attackRange = false;
+        
         Vector2 targetLocationleft, CurrentLocation, targetLocationright;
-        CurrentLocation = transform.position;
+        while (!attackRange)
+        {
+            CurrentLocation = transform.position;
         targetLocationleft = new Vector2(player.transform.position.x + 4, transform.position.y);
         targetLocationright = new Vector2(player.transform.position.x - 4, transform.position.y);
-        while(!attackRange)
-        {
+        
             if (transform.position.x >= player.transform.position.x && !isagainstwall("right"))
             {
-                spriteRenderer.flipX = false;
+                move = -1;
                 while (time < 1)
                 {
-                    RigComp.MovePosition(UnityEngine.Vector2.Lerp(CurrentLocation, targetLocationleft, time / 1));
+                    RigComp.MovePosition(UnityEngine.Vector2.Lerp(CurrentLocation, targetLocationleft, time / 1.5f));
                     time += Time.deltaTime;
                     yield return null;
                 }
@@ -112,10 +120,11 @@ public class Enemy:MonoBehaviour
             }
             else if (transform.position.x <= player.transform.position.x && !isagainstwall("left"))
             {
-                spriteRenderer.flipX = true;
+                move = 1;
+
                 while (time < 1)
                 {
-                    RigComp.MovePosition(UnityEngine.Vector2.Lerp(CurrentLocation, targetLocationright, time / 1));
+                    RigComp.MovePosition(UnityEngine.Vector2.Lerp(CurrentLocation, targetLocationright, time / 1.5f));
 
                     time += Time.deltaTime;
                     yield return null;
@@ -123,21 +132,40 @@ public class Enemy:MonoBehaviour
                 transform.position = targetLocationright;
             }
 
-            /*if(transform.position > 1 && transform.position < 5)
+            if((transform.position.x > player.transform.position.x + 1 && transform.position.x < player.transform.position.x + 5) || (transform.position.x < player.transform.position.x - 1 && transform.position.x > player.transform.position.x - 5))
             {
-
-            }*/
+                CurrentState = States.Attack;
+                Attack();
+                attackRange = true;
+            }
+            yield return null;
         }
       
     }
     #endregion
 
+    void Attack()
+    {
+        while(CurrentState == States.Attack && attackRange)
+        {
+            //crashes
+            if(!((transform.position.x > player.transform.position.x + 1 && transform.position.x < player.transform.position.x + 5) || (transform.position.x < player.transform.position.x - 1 && transform.position.x > player.transform.position.x - 5)))
+            {
+                attackRange = false;
+                
 
+            }
+
+                break;
+
+        }
+    }
+    
 
     #region BoolChecks
     bool isagainstwall(string checker)
     {
-        if (Physics2D.Raycast(transform.position, -transform.right, 1f, wall) && checker == "left"/*left*/ )
+        if (Physics2D.Raycast(transform.position, -transform.right, 1f, wall) && checker == "left" )
         {
             //touching wall
             Debug.Log("wall");
@@ -155,12 +183,27 @@ public class Enemy:MonoBehaviour
     }
     #endregion
 
+    void EnemyDeath()
+    {
+        Destroy(this.gameObject);
+    }
 
 
     #region triggers
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        
+        if(collision.tag == "Fire" && gameObject.tag != "Finder")
+        {
+           float damage = collision.GetComponent<FireAttacks_SuperClass>().damage;
+           
+            health -= damage;
+            
+            Debug.Log(health);
+            if (health <= 0)
+            {
+                EnemyDeath();
+            }
+        }
     }
     private void OnTriggerStay2D(Collider2D collision)
     {
@@ -175,7 +218,7 @@ public class Enemy:MonoBehaviour
         if (collision.tag == "Player")
         {
             playerInRange = false;
-
+            CurrentState = States.Patrol;
         }
 
     }
