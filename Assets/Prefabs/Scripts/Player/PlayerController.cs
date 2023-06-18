@@ -128,24 +128,7 @@ public class PlayerController : MonoBehaviour
     #endregion
 
 
-    #region bool checks
-    public void ConversationOn()
-    {
-        inConversation = true; 
-        
-    }
-
-    public void ConversationOff()
-    {
-        inConversation = false; 
-        
-    }
-
-
-    public bool IsInConversation() 
-    { 
-        return inConversation; 
-    }
+    #region bool checks 
     bool isGrounded()
     {
         
