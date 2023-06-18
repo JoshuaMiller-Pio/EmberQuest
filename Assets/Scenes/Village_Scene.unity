@@ -27194,6 +27194,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   input: {fileID: 1702746145}
+  playerNameSlots:
+  - {fileID: 449761511}
+  - {fileID: 1815343381}
+  - {fileID: 1517209641}
+  - {fileID: 269207467}
+  - {fileID: 1167840950}
+  - {fileID: 1903884053}
+  - {fileID: 986028611}
+  - {fileID: 2053460686}
+  - {fileID: 2094415753}
+  - {fileID: 258353468}
+  - {fileID: 1060382804}
 --- !u!4 &986510503
 Transform:
   m_ObjectHideFlags: 0

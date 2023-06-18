@@ -7,6 +7,7 @@ using UnityEngine.UI;
 public class Name : MonoBehaviour
 {
     public TMP_InputField input;
+    public TMP_Text[] playerNameSlots = new TMP_Text[11];
     // Start is called before the first frame update
     void Start()
     {
@@ -21,5 +22,13 @@ public class Name : MonoBehaviour
     {
         GameManager.Instance.playerName = input.text.ToString();
 
+    }
+
+    public void UpdateName()
+    {
+        foreach (var slot in playerNameSlots) 
+        {
+            slot.text = input.text.ToString();
+        }
     }
 }
