@@ -11,6 +11,7 @@ TagManager:
   - EnemyProjectile
   - Finder
   - Fire
+  - Arvin
   layers:
   - Default
   - TransparentFX
