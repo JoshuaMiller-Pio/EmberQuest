@@ -9,9 +9,9 @@ TagManager:
   - VillageSwitch
   - CaveSwitch
   - EnemyProjectile
-  - Finder
   - Fire
   - Arvin
+  - Feeler
   layers:
   - Default
   - TransparentFX
