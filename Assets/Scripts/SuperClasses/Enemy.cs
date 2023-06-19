@@ -19,6 +19,7 @@ public class Enemy:MonoBehaviour
     public LayerMask wall;
     bool attackRange = false;
     States CurrentState;
+
     enum States {Patrol, Attack, Chase}
 
 
@@ -58,7 +59,7 @@ public class Enemy:MonoBehaviour
         movementTime -= Time.deltaTime;
         SpriteOrientation();
         Debug.Log(attackRange);
-        if (!playerInRange && movementTime <= 0 && (CurrentState == States.Patrol))
+        if (true)//fix
         {
             enemyRandomMovement();
         }
@@ -71,7 +72,6 @@ public class Enemy:MonoBehaviour
         float[] moveDir = new float[] { -1, 1 };
         RigComp.velocity = new Vector2(moveDir[move] * 5, RigComp.velocity.y);
         movementTime = 2;
-
 
 
     }
@@ -146,19 +146,7 @@ public class Enemy:MonoBehaviour
 
     void Attack()
     {
-        while(CurrentState == States.Attack && attackRange)
-        {
-            //crashes
-            if(!((transform.position.x > player.transform.position.x + 1 && transform.position.x < player.transform.position.x + 5) || (transform.position.x < player.transform.position.x - 1 && transform.position.x > player.transform.position.x - 5)))
-            {
-                attackRange = false;
-                
 
-            }
-
-                break;
-
-        }
     }
     
 
@@ -190,37 +178,6 @@ public class Enemy:MonoBehaviour
 
 
     #region triggers
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        if(collision.tag == "Fire" && gameObject.tag != "Finder")
-        {
-           float damage = collision.GetComponent<FireAttacks_SuperClass>().damage;
-           
-            health -= damage;
-            
-            Debug.Log(health);
-            if (health <= 0)
-            {
-                EnemyDeath();
-            }
-        }
-    }
-    private void OnTriggerStay2D(Collider2D collision)
-    {
-        if (collision.tag == "Player")
-        {
-            playerInRange = true;
-            TargetedMovement();
-        }
-    }
-    private void OnTriggerExit2D(Collider2D collision)
-    {
-        if (collision.tag == "Player")
-        {
-            playerInRange = false;
-            CurrentState = States.Patrol;
-        }
 
-    }
     #endregion
 }

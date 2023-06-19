@@ -45,7 +45,7 @@ public class FireAttacks_SuperClass : MonoBehaviour
    }
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if(!(collision.tag == "Player" || collision.tag == "Finder" || collision.tag == "fire") && !PassThru )
+        if(collision.tag == "Enemy" && collision.tag != "feelers")
         {
             Extinguish();
         }
