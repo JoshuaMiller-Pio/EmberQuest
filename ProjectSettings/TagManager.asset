@@ -16,6 +16,7 @@ TagManager:
   - page
   - Death
   - Cordelia
+  - Fitsly
   layers:
   - Default
   - TransparentFX
