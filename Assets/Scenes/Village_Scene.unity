@@ -18307,7 +18307,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &639748237
 RectTransform:
   m_ObjectHideFlags: 0
@@ -70405,6 +70405,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 6015655049718850710, guid: 9b96f8143db579741b53d873f0a2c6eb, type: 3}
+      propertyPath: NarratorCanvas
+      value: 
+      objectReference: {fileID: 639748236}
     - target: {fileID: 6015655049718850711, guid: 9b96f8143db579741b53d873f0a2c6eb, type: 3}
       propertyPath: m_Size.x
       value: 0.98781204
