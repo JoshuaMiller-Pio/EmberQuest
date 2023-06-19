@@ -619,51 +619,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 1755590319, guid: 3c3e19e135af3254faf16d41ac7f21a1, type: 3}
   m_PrefabInstance: {fileID: 285331675415318796}
   m_PrefabAsset: {fileID: 0}
---- !u!61 &1723817886
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1723817884}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_ForceSendLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ForceReceiveLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ContactCaptureLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_CallbackLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: -0.36252117, y: -0.4284352}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0, y: 0}
-    oldSize: {x: 0, y: 0}
-    newSize: {x: 0, y: 0}
-    adaptiveTilingThreshold: 0
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 5, y: 2}
-  m_EdgeRadius: 0
 --- !u!1 &2042588257 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 285331676806378139, guid: 3c3e19e135af3254faf16d41ac7f21a1, type: 3}
@@ -677,21 +632,17 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1025893047, guid: 3c3e19e135af3254faf16d41ac7f21a1, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -39.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 1025893047, guid: 3c3e19e135af3254faf16d41ac7f21a1, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -1.3
+      objectReference: {fileID: 0}
     - target: {fileID: 1755590319, guid: 3c3e19e135af3254faf16d41ac7f21a1, type: 3}
       propertyPath: m_Layer
       value: 9
-      objectReference: {fileID: 0}
-    - target: {fileID: 1755590320, guid: 3c3e19e135af3254faf16d41ac7f21a1, type: 3}
-      propertyPath: m_Radius
-      value: 4.339183
-      objectReference: {fileID: 0}
-    - target: {fileID: 1755590320, guid: 3c3e19e135af3254faf16d41ac7f21a1, type: 3}
-      propertyPath: m_Offset.y
-      value: 1.8455667
-      objectReference: {fileID: 0}
-    - target: {fileID: 1755590320, guid: 3c3e19e135af3254faf16d41ac7f21a1, type: 3}
-      propertyPath: m_ExcludeLayers.m_Bits
-      value: 256
       objectReference: {fileID: 0}
     - target: {fileID: 285331674839507183, guid: 3c3e19e135af3254faf16d41ac7f21a1, type: 3}
       propertyPath: Player
@@ -717,10 +668,6 @@ PrefabInstance:
       propertyPath: bullet_Spawner
       value: 
       objectReference: {fileID: 1025893046}
-    - target: {fileID: 285331676806378134, guid: 3c3e19e135af3254faf16d41ac7f21a1, type: 3}
-      propertyPath: m_ExcludeLayers.m_Bits
-      value: 256
-      objectReference: {fileID: 0}
     - target: {fileID: 3049695308605463568, guid: 3c3e19e135af3254faf16d41ac7f21a1, type: 3}
       propertyPath: m_RootOrder
       value: 2
@@ -769,14 +716,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Auratii
       objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 1755590320, guid: 3c3e19e135af3254faf16d41ac7f21a1, type: 3}
+    m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 1755590319, guid: 3c3e19e135af3254faf16d41ac7f21a1, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1723817886}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3c3e19e135af3254faf16d41ac7f21a1, type: 3}
 --- !u!1001 &6015655050415648652
 PrefabInstance:
@@ -800,11 +743,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6015655049718850705, guid: 9b96f8143db579741b53d873f0a2c6eb, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 18.52
+      value: 6.92
       objectReference: {fileID: 0}
     - target: {fileID: 6015655049718850705, guid: 9b96f8143db579741b53d873f0a2c6eb, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -2.43
+      value: 3.08
       objectReference: {fileID: 0}
     - target: {fileID: 6015655049718850705, guid: 9b96f8143db579741b53d873f0a2c6eb, type: 3}
       propertyPath: m_LocalPosition.z

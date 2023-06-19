@@ -1,4 +1,5 @@
 using Mono.Cecil;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,10 +11,9 @@ public class Auratii : Enemy
 {
     GameObject player;
     public GameObject arm, torso , feeler, bullet_Spawner, bullet;
-    bool againstwall;
     
     float timer = 2;
-    float debugtimer = 3;
+    float ShootCooldown = 1;
     AIstate state;
      Vector2 target;
     float distance, DistToTarget;
@@ -34,13 +34,8 @@ public class Auratii : Enemy
 
     private void Update()
     {
-        debugtimer -= Time.deltaTime;
-        if(debugtimer <= 0 || state == AIstate.chase)
-        {
-            Debug.Log(state);
-            debugtimer = 1;
-        }
 
+        ShootCooldown -= Time.deltaTime;
         DistToTarget = transform.position.x - player.transform.position.x;
         timer -= Time.deltaTime;
         if(Health <= 0)
@@ -63,10 +58,13 @@ public class Auratii : Enemy
         if(DistToTarget == 3 || DistToTarget == -3)
         {
             state = AIstate.attack;
-      
-            Attack();
+            if(ShootCooldown <= 0)
+            {
+                Attack();
+                ShootCooldown = 1;
+            }
         }
-        else if ((DistToTarget > 3 || DistToTarget < -3) && state == AIstate.attack )
+        else if ((DistToTarget > 10 || DistToTarget < -10) && state == AIstate.attack)
         {
             state = AIstate.patrol;
         }
@@ -75,7 +73,7 @@ public class Auratii : Enemy
 
     void PatrolMovement()
     {
-        distance =  Random.Range(-2, 3);
+        distance =  UnityEngine.Random.Range(-2, 3);
         RigComp.velocity = new Vector2(distance * speed, RigComp.velocity.y);
     }
 
@@ -91,7 +89,7 @@ public class Auratii : Enemy
 
     IEnumerator ChaseLerp(Vector2 TargetPos)
     {
-        if (!againstwall)
+        if (!feelers.againstwall)
         {
             float time = 0;
             UnityEngine.Vector3 CurrentPos = transform.position;
@@ -104,8 +102,9 @@ public class Auratii : Enemy
             }
             transform.position = TargetPos;
         }
-        else if(againstwall)
+        else if(feelers.againstwall)
         {
+            Debug.Log("wall");
             state = AIstate.patrol;
         }
        
@@ -113,7 +112,8 @@ public class Auratii : Enemy
 
     void Attack()
     {
-        Instantiate(bullet, bullet_Spawner.transform);
+
+        Instantiate(bullet, bullet_Spawner.transform.position, Quaternion.identity);
     }
 
     void SpriteOrientation()
@@ -145,10 +145,7 @@ public class Auratii : Enemy
         {
             state = AIstate.chase;
         } 
-        if(collision.gameObject.tag == "ground")
-        {
-            againstwall = true;
-        }
+       
 
     }
 }
