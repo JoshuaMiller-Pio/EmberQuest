@@ -9,7 +9,7 @@ public class PlayerController : MonoBehaviour
 
     Rigidbody2D rigComp;
     BoxCollider2D CollComp;
-    public GameObject legs, torso,arm;
+    public GameObject legs, torso,arm, caveSpawn;
     public LayerMask ground;
     public static float angle;
     SpriteRenderer torsoRend;
@@ -39,11 +39,17 @@ public class PlayerController : MonoBehaviour
         torsoRend = torso.GetComponent<SpriteRenderer>();
         inConversation = false;
         Spawnned = false;
+        caveSpawn = GameObject.FindGameObjectWithTag("CaveSwitch");
+        
     }
     // Start is called before the first frame update
     void Start()
     {
-       
+        if (GameManager.Instance.incave)
+        {
+         gameObject.transform.position = caveSpawn.transform.position;
+
+        }
         health = 10;
     }
 
@@ -105,7 +111,6 @@ public class PlayerController : MonoBehaviour
         {
            // Auratii attack = collision.gameObject.GetComponent<Auratii>();
              Health -= 2;
-            Debug.Log(health);
 
             if (health <= 0)
             {
