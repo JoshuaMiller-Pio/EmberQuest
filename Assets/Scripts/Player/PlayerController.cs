@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UIElements;
 
 public class PlayerController : MonoBehaviour
@@ -12,15 +13,16 @@ public class PlayerController : MonoBehaviour
     public LayerMask ground;
     public static float angle;
     SpriteRenderer torsoRend;
-    public bool inConversation;
+    public bool inConversation, Spawnned;
     float DirX;
     private Animator LegAniComp;
-
-    public int Health;
+   
+    public float Health;
+    float scenetrans = 5;
 
     #region Properties
 
-    public int health
+    public float health
     {
         set { Health = value; }
         get { return Health; }
@@ -36,6 +38,7 @@ public class PlayerController : MonoBehaviour
         CollComp = GetComponent<BoxCollider2D>();
         torsoRend = torso.GetComponent<SpriteRenderer>();
         inConversation = false;
+        Spawnned = false;
     }
     // Start is called before the first frame update
     void Start()
@@ -94,17 +97,21 @@ public class PlayerController : MonoBehaviour
         GameManager.Instance.PlayerDead();
     }
 
+  
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.tag == "EnemyProjectile")
         {
-            //will change to enemey damage
-            health -= 1;
+           // Auratii attack = collision.gameObject.GetComponent<Auratii>();
+             Health -= 2;
+            Debug.Log(health);
+
             if (health <= 0)
             {
                 isDead();
             }
+            Destroy(collision.gameObject);
         }
 
         if (collision.gameObject.tag == "Death")

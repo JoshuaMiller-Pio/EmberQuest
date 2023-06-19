@@ -8,8 +8,11 @@ using UnityEngine.SceneManagement;
 public class GameManager : Singleton<GameManager>
 {
     // Start is called before the first frame update
-    private string _PlayerName = "?????";
-    public bool HasHerbs, cordFirst, arvinFirst, fitsFirst, hasDocs, arvinQuestDone, narratorFirst, inConversation, inMenu;
+
+    private string _PlayerName;
+    public bool HasHerbs, cordFirst, arvinFirst, fitsFirst, hasDocs, arvinQuestDone, narratorFirst, inConversation, inMenu, incave;
+
+
     public int _Gold, _Health, _HealthPotions;
     private int _NumOfHerbs;
 
@@ -110,9 +113,21 @@ public class GameManager : Singleton<GameManager>
    public void VilliageTrans()
    {
         SceneManager.LoadScene(1);
+        Village_caveSpawn();
    }
    public void CaveTrans()
    {
         SceneManager.LoadScene(2);
+        incave = true;
    }
+    void Village_caveSpawn()
+    {
+        if (GameManager.Instance.incave && SceneManager.GetActiveScene().buildIndex == 2 )
+        {
+            GameObject cave_spawn = GameObject.FindGameObjectWithTag("CaveSwitch");
+            gameObject.transform.position = cave_spawn.transform.position;
+
+            Debug.Log("yes");
+        }
+    }
 }
