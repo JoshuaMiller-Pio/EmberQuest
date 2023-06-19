@@ -7396,7 +7396,7 @@ GameObject:
   - component: {fileID: 258353468}
   m_Layer: 5
   m_Name: TextName
-  m_TagString: Untagged
+  m_TagString: PlayerName
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -7995,7 +7995,7 @@ GameObject:
   - component: {fileID: 269207467}
   m_Layer: 5
   m_Name: TextName
-  m_TagString: Untagged
+  m_TagString: PlayerName
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -13596,7 +13596,7 @@ GameObject:
   - component: {fileID: 449761511}
   m_Layer: 5
   m_Name: TextName
-  m_TagString: Untagged
+  m_TagString: PlayerName
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -29753,7 +29753,7 @@ GameObject:
   - component: {fileID: 986028611}
   m_Layer: 5
   m_Name: TextName
-  m_TagString: Untagged
+  m_TagString: PlayerName
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -29931,7 +29931,6 @@ MonoBehaviour:
   - {fileID: 2094415753}
   - {fileID: 258353468}
   - {fileID: 1060382804}
-  - {fileID: 0}
 --- !u!1 &986920363
 GameObject:
   m_ObjectHideFlags: 0
@@ -33138,7 +33137,7 @@ GameObject:
   - component: {fileID: 1060382804}
   m_Layer: 5
   m_Name: TextName
-  m_TagString: Untagged
+  m_TagString: PlayerName
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -56688,7 +56687,7 @@ GameObject:
   - component: {fileID: 1517209641}
   m_Layer: 5
   m_Name: TextName
-  m_TagString: Untagged
+  m_TagString: PlayerName
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -71509,7 +71508,7 @@ GameObject:
   - component: {fileID: 1815343381}
   m_Layer: 5
   m_Name: TextName
-  m_TagString: Untagged
+  m_TagString: PlayerName
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -73842,7 +73841,7 @@ GameObject:
   - component: {fileID: 1903884053}
   m_Layer: 5
   m_Name: TextName
-  m_TagString: Untagged
+  m_TagString: PlayerName
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -78864,7 +78863,7 @@ GameObject:
   - component: {fileID: 2053460686}
   m_Layer: 5
   m_Name: TextName
-  m_TagString: Untagged
+  m_TagString: PlayerName
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -79935,7 +79934,7 @@ GameObject:
   - component: {fileID: 2094415753}
   m_Layer: 5
   m_Name: TextName
-  m_TagString: Untagged
+  m_TagString: PlayerName
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
