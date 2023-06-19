@@ -17,6 +17,7 @@ public class Chat : MonoBehaviour
     {
         if(collision.gameObject.tag == "Fitsly" && Input.GetKeyDown(KeyCode.E)) 
         {
+            
             FitzlyCanvas.gameObject.SetActive(true);
             DialogueManager.ConversationOn();
             if (DialogueManager.ArvinQuestDone)
