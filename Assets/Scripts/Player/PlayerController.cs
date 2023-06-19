@@ -16,11 +16,11 @@ public class PlayerController : MonoBehaviour
     float DirX;
     private Animator LegAniComp;
 
-    private float Health;
+    public int Health;
 
     #region Properties
 
-    public float health
+    public int health
     {
         set { Health = value; }
         get { return Health; }
@@ -101,6 +101,7 @@ public class PlayerController : MonoBehaviour
         {
             //will change to enemey damage
             health -= 1;
+            
         }
     }
 

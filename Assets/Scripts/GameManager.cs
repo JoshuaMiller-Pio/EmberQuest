@@ -9,7 +9,7 @@ public class GameManager : Singleton<GameManager>
     // Start is called before the first frame update
     private string _PlayerName;
     public bool HasHerbs, cordFirst, arvinFirst, fitsFirst, hasDocs, arvinQuestDone, narratorFirst, inConversation, inMenu;
-    int _Gold, _Health, _HealthPotions;
+    public int _Gold, _Health, _HealthPotions;
     private int _NumOfHerbs;
 
 
@@ -43,7 +43,7 @@ public class GameManager : Singleton<GameManager>
     #endregion
     void Start()
     {
-        
+        _Health = 10;
     }
 
     // Update is called once per frame
