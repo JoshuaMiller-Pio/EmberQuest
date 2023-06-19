@@ -8,19 +8,25 @@ public class UIManager : MonoBehaviour
 {
     public TMP_Text goldUI;
     public Image healthBar, potion, potion1, potion2;
-
+    public  Slider healthSlider;
     // Start is called before the first frame update
     void Start()
     {
+       
         UpdateGoldUI();
         UpdatePotionsUI();
+        UpdateHealthUI();
     }
 
-    public void UpdateGoldUI()
+    public  void UpdateGoldUI()
     {
         goldUI.text = GameManager.Instance.gold.ToString();
     }
 
+    public  void UpdateHealthUI()
+    {
+        healthSlider.value = GameManager.Instance.health;
+    }
     public void UpdatePotionsUI()
     {
         if(GameManager.Instance.healthPotions == 0)
@@ -54,6 +60,6 @@ public class UIManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        UpdateHealthUI();
     }
 }
