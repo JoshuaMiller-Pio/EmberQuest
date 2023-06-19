@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 4335882669805357079}
   - component: {fileID: 7244450573218832244}
   - component: {fileID: -4747509087900833292}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: BaseAttack
   m_TagString: Fire
   m_Icon: {fileID: 0}

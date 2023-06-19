@@ -16,11 +16,11 @@ public class PlayerController : MonoBehaviour
     float DirX;
     private Animator LegAniComp;
 
-    public int Health;
+    public float Health;
 
     #region Properties
 
-    public int health
+    public float health
     {
         set { Health = value; }
         get { return Health; }
@@ -100,11 +100,14 @@ public class PlayerController : MonoBehaviour
         if (collision.gameObject.tag == "EnemyProjectile")
         {
             //will change to enemey damage
-            health -= 1;
+            Auratii attack = collision.gameObject.GetComponent<Auratii>();
+            Health -= attack.Damage;
+           
             if (health <= 0)
             {
                 isDead();
             }
+            Destroy(collision.gameObject);
         }
 
         if (collision.gameObject.tag == "Death")

@@ -371,6 +371,7 @@ GameObject:
   - component: {fileID: 147381576}
   - component: {fileID: 147381575}
   - component: {fileID: 147381574}
+  - component: {fileID: 147381577}
   m_Layer: 0
   m_Name: table_and_letter
   m_TagString: page
@@ -490,6 +491,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &147381577
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 147381573}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5757cda70ad733c4e994f1e7fa48cb0c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &156664559
 GameObject:
   m_ObjectHideFlags: 0
