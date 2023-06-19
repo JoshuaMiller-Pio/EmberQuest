@@ -18,9 +18,7 @@ public class Enemy:MonoBehaviour
     public GameObject player, feelers;
     public LayerMask wall;
     bool attackRange = false;
-    States CurrentState;
 
-    enum States {Patrol, Attack, Chase}
 
 
 
@@ -57,8 +55,8 @@ public class Enemy:MonoBehaviour
     private void Update()
     {
         movementTime -= Time.deltaTime;
-        SpriteOrientation();
-        Debug.Log(attackRange);
+        //SpriteOrientation();
+
         if (true)//fix
         {
             enemyRandomMovement();
@@ -75,12 +73,8 @@ public class Enemy:MonoBehaviour
 
 
     }
-    void TargetedMovement()
-    {
-        CurrentState = States.Chase;
-        StartCoroutine(walk());
-    }
 
+    //commented out
     void SpriteOrientation()
     {
         if (move > 0)
@@ -95,52 +89,11 @@ public class Enemy:MonoBehaviour
 
         }
     }
+
+
     IEnumerator walk()
     {
-        float time = 0;
-        
-        Vector2 targetLocationleft, CurrentLocation, targetLocationright;
-        while (!attackRange)
-        {
-            CurrentLocation = transform.position;
-        targetLocationleft = new Vector2(player.transform.position.x + 4, transform.position.y);
-        targetLocationright = new Vector2(player.transform.position.x - 4, transform.position.y);
-        
-            if (transform.position.x >= player.transform.position.x && !isagainstwall("right"))
-            {
-                move = -1;
-                while (time < 1)
-                {
-                    RigComp.MovePosition(UnityEngine.Vector2.Lerp(CurrentLocation, targetLocationleft, time / 1.5f));
-                    time += Time.deltaTime;
-                    yield return null;
-                }
-                transform.position = targetLocationleft;
-
-            }
-            else if (transform.position.x <= player.transform.position.x && !isagainstwall("left"))
-            {
-                move = 1;
-
-                while (time < 1)
-                {
-                    RigComp.MovePosition(UnityEngine.Vector2.Lerp(CurrentLocation, targetLocationright, time / 1.5f));
-
-                    time += Time.deltaTime;
-                    yield return null;
-                }
-                transform.position = targetLocationright;
-            }
-
-            if((transform.position.x > player.transform.position.x + 1 && transform.position.x < player.transform.position.x + 5) || (transform.position.x < player.transform.position.x - 1 && transform.position.x > player.transform.position.x - 5))
-            {
-                CurrentState = States.Attack;
-                Attack();
-                attackRange = true;
-            }
-            yield return null;
-        }
-      
+        yield return null;
     }
     #endregion
 
@@ -178,6 +131,12 @@ public class Enemy:MonoBehaviour
 
 
     #region triggers
-
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if(collision.tag == "fire")
+        {
+            health--;
+        }
+    }
     #endregion
 }

@@ -12,6 +12,9 @@ TagManager:
   - Fire
   - Arvin
   - Feeler
+  - herb
+  - page
+  - Death
   layers:
   - Default
   - TransparentFX
