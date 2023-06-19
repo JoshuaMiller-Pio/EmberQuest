@@ -16,7 +16,7 @@ public class PlayerController : MonoBehaviour
     public bool inConversation, Spawnned;
     float DirX;
     private Animator LegAniComp;
-   
+    public GameObject NarratorCanvas;
     public float Health;
     float scenetrans = 5;
 
@@ -51,6 +51,11 @@ public class PlayerController : MonoBehaviour
 
         }
         health = 10;
+
+        if(GameManager.Instance.narratorFirst == false)
+        {
+            NarratorCanvas.gameObject.SetActive(true);
+        }
     }
 
     // Update is called once per frame
@@ -58,7 +63,10 @@ public class PlayerController : MonoBehaviour
     {
         onKeyDown();
         MouseMovement();
-        
+        if (Input.GetKey(KeyCode.R))
+        {
+            TakeHealthPotion();
+        }
     }
 
     #region movement
@@ -103,7 +111,14 @@ public class PlayerController : MonoBehaviour
         GameManager.Instance.PlayerDead();
     }
 
-  
+  public void TakeHealthPotion()
+    {
+        if (GameManager.Instance._HealthPotions >= 1) 
+        {
+            GameManager.Instance._HealthPotions--;
+            GameManager.Instance.health = GameManager.Instance.maxHealth;
+        }
+    }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
