@@ -8,8 +8,8 @@ public class GameManager : Singleton<GameManager>
 {
     // Start is called before the first frame update
     private string _PlayerName;
-    public bool HasHerbs, cordFirst, arvinFirst, fitsFirst, hasDocs, arvinQuestDone, narratorFirst;
-    int _Gold, _Health, _HealthPotions;
+    public bool HasHerbs, cordFirst, arvinFirst, fitsFirst, hasDocs, arvinQuestDone, narratorFirst, inConversation, inMenu;
+    public int _Gold, _Health, _HealthPotions;
     private int _NumOfHerbs;
 
 
@@ -43,13 +43,34 @@ public class GameManager : Singleton<GameManager>
     #endregion
     void Start()
     {
-        
+        _Health = 10;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if(numOfHerbs == 2 && !HasHerbs)
+
+        if (DialogueManager.inConversation)
+        {
+            inConversation = true;
+        }
+
+        if (DialogueManager.inConversation == false)
+        {
+            inConversation = false;
+        }
+
+        if (DialogueManager.inMenu)
+        {
+            inMenu = true;
+        }
+
+        if (DialogueManager.inMenu == false)
+        {
+            inMenu = false;
+        }
+
+        if (numOfHerbs == 2 && !HasHerbs)
         {
             HasHerbs = true;
         }

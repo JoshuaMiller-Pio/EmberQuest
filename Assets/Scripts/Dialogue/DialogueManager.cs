@@ -15,7 +15,7 @@ public class DialogueManager : MonoBehaviour
         gotPlants = false;
         GotEvidence = false;
         ArvinQuestDone = false;
-        inConversation = true;
+        inConversation = false;
         inMenu = false;
         narratorFirstDone = false;
     }
@@ -84,7 +84,7 @@ public class DialogueManager : MonoBehaviour
         ArvinQuestDone=true;
     }
 
-    public void ConversationOn()
+    public static void ConversationOn()
     {
         inConversation = true;
 
@@ -101,13 +101,13 @@ public class DialogueManager : MonoBehaviour
         narratorFirstDone = true;
 
     }
-    public void ConversationOff()
+    public static void ConversationOff()
     {
         inConversation = false;
 
     }
 
-    public void InMenuOff()
+    public static void InMenuOff()
     {
         inMenu = false;
 

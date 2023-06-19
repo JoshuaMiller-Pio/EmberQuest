@@ -16,11 +16,11 @@ public class PlayerController : MonoBehaviour
     float DirX;
     private Animator LegAniComp;
 
-    private float Health;
+    public int Health;
 
     #region Properties
 
-    public float health
+    public int health
     {
         set { Health = value; }
         get { return Health; }
@@ -57,7 +57,7 @@ public class PlayerController : MonoBehaviour
     //detects key press and moves the player
     void onKeyDown()
     {
-        if(inConversation == false)
+        if(GameManager.Instance.inConversation == false && GameManager.Instance.inMenu == false)
         {
              DirX = Input.GetAxis("Horizontal");
 
@@ -101,6 +101,7 @@ public class PlayerController : MonoBehaviour
         {
             //will change to enemey damage
             health -= 1;
+            
         }
     }
 

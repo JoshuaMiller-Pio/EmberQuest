@@ -18,6 +18,7 @@ public class Chat : MonoBehaviour
         if(collision.gameObject.tag == "Fitsly" && Input.GetKeyDown(KeyCode.E)) 
         {
             FitzlyCanvas.gameObject.SetActive(true);
+            DialogueManager.ConversationOn();
             if (DialogueManager.ArvinQuestDone)
             {
                 FitslyGenPanel.gameObject.SetActive(false);
@@ -28,6 +29,7 @@ public class Chat : MonoBehaviour
         if (collision.gameObject.tag == "Cordelia" && Input.GetKeyDown(KeyCode.E))
         {
             CordeliaCanvas.gameObject.SetActive(true);
+            DialogueManager.ConversationOn();
             if (DialogueManager.gotPlants)
             {
                 CordeliaGenPanel.gameObject.SetActive(false);
@@ -38,6 +40,7 @@ public class Chat : MonoBehaviour
         if (collision.gameObject.tag == "Arvin" && Input.GetKeyDown(KeyCode.E))
         {
             ArvinCanvas.gameObject.SetActive(true);
+            DialogueManager.ConversationOn();
             if (DialogueManager.GotEvidence)
             {
                 ArvinGenPanel.gameObject.SetActive(false);
