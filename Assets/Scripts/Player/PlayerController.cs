@@ -57,7 +57,7 @@ public class PlayerController : MonoBehaviour
     //detects key press and moves the player
     void onKeyDown()
     {
-        if(inConversation == false)
+        if(GameManager.Instance.inConversation == false && GameManager.Instance.inMenu == false)
         {
              DirX = Input.GetAxis("Horizontal");
 
