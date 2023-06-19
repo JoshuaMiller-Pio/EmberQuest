@@ -2,10 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlantPickup : MonoBehaviour
+public class Pickup : MonoBehaviour
 {
     bool inRange = false;
-    bool hasRun = false;
+    bool limiter = false;
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -16,7 +17,7 @@ public class PlantPickup : MonoBehaviour
     void Update()
     {
 
-        if (inRange && !hasRun)
+        if (inRange && !limiter)
         {
             pickup();
         }
@@ -44,9 +45,18 @@ public class PlantPickup : MonoBehaviour
     {
         if (Input.GetKeyDown("e"))
         {
-            hasRun = true;
-            GameManager.Instance.numOfHerbs++;
-            Destroy(gameObject);
+            limiter = true; //makes sure code only runs once
+            if(gameObject.tag == "herb")
+            {
+             GameManager.Instance.numOfHerbs++;
+             Destroy(gameObject);
+
+            }
+            else if(gameObject.tag == "page")
+            {
+                GameManager.Instance.hasDocs = true;
+
+            }
         }
     }
 }

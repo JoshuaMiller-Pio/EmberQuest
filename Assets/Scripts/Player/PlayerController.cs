@@ -49,7 +49,7 @@ public class PlayerController : MonoBehaviour
     {
         onKeyDown();
         MouseMovement();
- 
+        
     }
 
     #region movement
@@ -95,15 +95,24 @@ public class PlayerController : MonoBehaviour
     }
 
 
-    private void OnCollisionEnter2D(Collision2D collision)
+    private void OnTriggerEnter2D(Collider2D collision)
     {
-        if(collision.gameObject.tag == "EnemyProjectile")
+        if (collision.gameObject.tag == "EnemyProjectile")
         {
             //will change to enemey damage
             health -= 1;
-            
+            if (health <= 0)
+            {
+                isDead();
+            }
+        }
+
+        if (collision.gameObject.tag == "Death")
+        {
+            isDead();
         }
     }
+
 
     #region Mouse Detection
     void MouseMovement()

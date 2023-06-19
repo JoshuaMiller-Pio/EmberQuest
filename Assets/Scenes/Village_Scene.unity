@@ -5636,6 +5636,7 @@ MonoBehaviour:
   potion: {fileID: 1199981618}
   potion1: {fileID: 1922945470}
   potion2: {fileID: 1950262852}
+  healthSlider: {fileID: 0}
 --- !u!4 &196422819
 Transform:
   m_ObjectHideFlags: 0
@@ -6877,6 +6878,40 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 238466013}
   m_CullTransparentMesh: 1
+--- !u!114 &239280358
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 13312, guid: 0000000000000000e000000000000000, type: 0}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Sprite: {fileID: 1487949213}
+  m_Color: {r: 0.7287578, g: 0.33417004, b: 0.44907236, a: 1}
+  m_Transform:
+    e00: 1
+    e01: 0
+    e02: 0
+    e03: 0
+    e10: 0
+    e11: 1
+    e12: 0
+    e13: 0
+    e20: 0
+    e21: 0
+    e22: 1
+    e23: 0
+    e30: 0
+    e31: 0
+    e32: 0
+    e33: 1
+  m_InstancedGameObject: {fileID: 0}
+  m_Flags: 3
+  m_ColliderType: 1
 --- !u!1 &239480403
 GameObject:
   m_ObjectHideFlags: 0
@@ -11899,11 +11934,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 393400503}
   m_CullTransparentMesh: 1
---- !u!1 &395756898 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 3479213971735578200, guid: e05be305efaa69c44a134ef4cf464d2f, type: 3}
-  m_PrefabInstance: {fileID: 671586462}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &395809954
 GameObject:
   m_ObjectHideFlags: 0
@@ -12494,6 +12524,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: beachleaf (9)
       objectReference: {fileID: 0}
+    - target: {fileID: 3479213971735578200, guid: e05be305efaa69c44a134ef4cf464d2f, type: 3}
+      propertyPath: m_TagString
+      value: herb
+      objectReference: {fileID: 0}
     - target: {fileID: 6615064581102826346, guid: e05be305efaa69c44a134ef4cf464d2f, type: 3}
       propertyPath: m_RootOrder
       value: -1
@@ -12792,99 +12826,101 @@ Tilemap:
     second:
       serializedVersion: 2
       m_TileIndex: 0
-      m_TileSpriteIndex: 0
+      m_TileSpriteIndex: 1
       m_TileMatrixIndex: 0
-      m_TileColorIndex: 0
+      m_TileColorIndex: 1
       m_TileObjectToInstantiateIndex: 65535
       dummyAlignment: 0
-      m_AllTileFlags: 1073741825
+      m_AllTileFlags: 1073741827
   - first: {x: -54, y: -16, z: 0}
     second:
       serializedVersion: 2
       m_TileIndex: 0
-      m_TileSpriteIndex: 0
+      m_TileSpriteIndex: 1
       m_TileMatrixIndex: 0
-      m_TileColorIndex: 0
+      m_TileColorIndex: 1
       m_TileObjectToInstantiateIndex: 65535
       dummyAlignment: 0
-      m_AllTileFlags: 1073741825
+      m_AllTileFlags: 1073741827
   - first: {x: -51, y: -16, z: 0}
     second:
       serializedVersion: 2
       m_TileIndex: 0
-      m_TileSpriteIndex: 0
+      m_TileSpriteIndex: 1
       m_TileMatrixIndex: 0
-      m_TileColorIndex: 0
+      m_TileColorIndex: 1
       m_TileObjectToInstantiateIndex: 65535
       dummyAlignment: 0
-      m_AllTileFlags: 1073741825
+      m_AllTileFlags: 1073741827
   - first: {x: -57, y: -15, z: 0}
     second:
       serializedVersion: 2
       m_TileIndex: 0
-      m_TileSpriteIndex: 0
+      m_TileSpriteIndex: 1
       m_TileMatrixIndex: 0
-      m_TileColorIndex: 0
+      m_TileColorIndex: 1
       m_TileObjectToInstantiateIndex: 65535
       dummyAlignment: 0
-      m_AllTileFlags: 1073741825
+      m_AllTileFlags: 1073741827
   - first: {x: -56, y: -15, z: 0}
     second:
       serializedVersion: 2
       m_TileIndex: 0
-      m_TileSpriteIndex: 0
+      m_TileSpriteIndex: 1
       m_TileMatrixIndex: 0
-      m_TileColorIndex: 0
+      m_TileColorIndex: 1
       m_TileObjectToInstantiateIndex: 65535
       dummyAlignment: 0
-      m_AllTileFlags: 1073741825
+      m_AllTileFlags: 1073741827
   - first: {x: -55, y: -15, z: 0}
     second:
       serializedVersion: 2
       m_TileIndex: 0
-      m_TileSpriteIndex: 0
+      m_TileSpriteIndex: 1
       m_TileMatrixIndex: 0
-      m_TileColorIndex: 0
+      m_TileColorIndex: 1
       m_TileObjectToInstantiateIndex: 65535
       dummyAlignment: 0
-      m_AllTileFlags: 1073741825
+      m_AllTileFlags: 1073741827
   - first: {x: -51, y: -13, z: 0}
     second:
       serializedVersion: 2
       m_TileIndex: 0
-      m_TileSpriteIndex: 0
+      m_TileSpriteIndex: 1
       m_TileMatrixIndex: 0
-      m_TileColorIndex: 0
+      m_TileColorIndex: 1
       m_TileObjectToInstantiateIndex: 65535
       dummyAlignment: 0
-      m_AllTileFlags: 1073741825
+      m_AllTileFlags: 1073741827
   - first: {x: -50, y: -13, z: 0}
     second:
       serializedVersion: 2
       m_TileIndex: 0
-      m_TileSpriteIndex: 0
+      m_TileSpriteIndex: 1
       m_TileMatrixIndex: 0
-      m_TileColorIndex: 0
+      m_TileColorIndex: 1
       m_TileObjectToInstantiateIndex: 65535
       dummyAlignment: 0
-      m_AllTileFlags: 1073741825
+      m_AllTileFlags: 1073741827
   - first: {x: -49, y: -13, z: 0}
     second:
       serializedVersion: 2
       m_TileIndex: 0
-      m_TileSpriteIndex: 0
+      m_TileSpriteIndex: 1
       m_TileMatrixIndex: 0
-      m_TileColorIndex: 0
+      m_TileColorIndex: 1
       m_TileObjectToInstantiateIndex: 65535
       dummyAlignment: 0
-      m_AllTileFlags: 1073741825
+      m_AllTileFlags: 1073741827
   m_AnimatedTiles: {}
   m_TileAssetArray:
   - m_RefCount: 9
-    m_Data: {fileID: 11400000, guid: 4b61a5adbc0c3cd4eb120d8878b7ce6e, type: 2}
+    m_Data: {fileID: 239280358}
   m_TileSpriteArray:
+  - m_RefCount: 0
+    m_Data: {fileID: 0}
   - m_RefCount: 9
-    m_Data: {fileID: 21300000, guid: 525dd0cc6c485d84d8808ccfedb72ec8, type: 3}
+    m_Data: {fileID: 1487949213}
   m_TileMatrixArray:
   - m_RefCount: 9
     m_Data:
@@ -12905,8 +12941,10 @@ Tilemap:
       e32: 0
       e33: 1
   m_TileColorArray:
+  - m_RefCount: 0
+    m_Data: {r: 1.51803e-40, g: 1.51803e-40, b: 1.51803e-40, a: 1.51803e-40}
   - m_RefCount: 9
-    m_Data: {r: 1, g: 1, b: 1, a: 1}
+    m_Data: {r: 0.7287578, g: 0.33417004, b: 0.44907236, a: 1}
   m_TileObjectToInstantiateArray: []
   m_AnimationFrameRate: 1
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -16896,6 +16934,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: beachleaf (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 3479213971735578200, guid: e05be305efaa69c44a134ef4cf464d2f, type: 3}
+      propertyPath: m_TagString
+      value: herb
+      objectReference: {fileID: 0}
     - target: {fileID: 6615064581102826346, guid: e05be305efaa69c44a134ef4cf464d2f, type: 3}
       propertyPath: m_RootOrder
       value: -1
@@ -18606,6 +18648,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: beachleaf
       objectReference: {fileID: 0}
+    - target: {fileID: 3479213971735578200, guid: e05be305efaa69c44a134ef4cf464d2f, type: 3}
+      propertyPath: m_TagString
+      value: herb
+      objectReference: {fileID: 0}
     - target: {fileID: 6615064581102826346, guid: e05be305efaa69c44a134ef4cf464d2f, type: 3}
       propertyPath: m_RootOrder
       value: -1
@@ -18653,10 +18699,7 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 3479213971735578200, guid: e05be305efaa69c44a134ef4cf464d2f, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 927567569}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e05be305efaa69c44a134ef4cf464d2f, type: 3}
 --- !u!1 &676071141
 GameObject:
@@ -21873,6 +21916,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: beachleaf (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 3479213971735578200, guid: e05be305efaa69c44a134ef4cf464d2f, type: 3}
+      propertyPath: m_TagString
+      value: herb
+      objectReference: {fileID: 0}
     - target: {fileID: 6615064581102826346, guid: e05be305efaa69c44a134ef4cf464d2f, type: 3}
       propertyPath: m_RootOrder
       value: -1
@@ -24821,6 +24868,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: beachleaf (7)
       objectReference: {fileID: 0}
+    - target: {fileID: 3479213971735578200, guid: e05be305efaa69c44a134ef4cf464d2f, type: 3}
+      propertyPath: m_TagString
+      value: herb
+      objectReference: {fileID: 0}
     - target: {fileID: 6615064581102826346, guid: e05be305efaa69c44a134ef4cf464d2f, type: 3}
       propertyPath: m_RootOrder
       value: -1
@@ -27197,51 +27248,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 6615064581102826346, guid: e05be305efaa69c44a134ef4cf464d2f, type: 3}
   m_PrefabInstance: {fileID: 671586462}
   m_PrefabAsset: {fileID: 0}
---- !u!61 &927567569
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 395756898}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_ForceSendLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ForceReceiveLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ContactCaptureLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_CallbackLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: -2.2302542, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 32, y: 32}
-    newSize: {x: 32, y: 32}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 47.930428, y: 32}
-  m_EdgeRadius: 0
 --- !u!1001 &943644766
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -28417,6 +28423,10 @@ PrefabInstance:
     - target: {fileID: 3479213971735578200, guid: e05be305efaa69c44a134ef4cf464d2f, type: 3}
       propertyPath: m_Name
       value: beachleaf (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3479213971735578200, guid: e05be305efaa69c44a134ef4cf464d2f, type: 3}
+      propertyPath: m_TagString
+      value: herb
       objectReference: {fileID: 0}
     - target: {fileID: 6615064581102826346, guid: e05be305efaa69c44a134ef4cf464d2f, type: 3}
       propertyPath: m_RootOrder
@@ -30562,7 +30572,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1006065291}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -16.223928, y: -7.304987, z: 1}
+  m_LocalPosition: {x: -16.223928, y: -7.304987, z: 0}
   m_LocalScale: {x: 0.037546188, y: 0.037546188, z: 0.037546188}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -55288,6 +55298,216 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 2018365450437254147, guid: 1509360826d6bb34587310ad4949fdd5, type: 3}
   m_PrefabInstance: {fileID: 2051447458}
   m_PrefabAsset: {fileID: 0}
+--- !u!213 &1487949213
+Sprite:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: 
+  m_Rect:
+    serializedVersion: 2
+    x: 0
+    y: 0
+    width: 4
+    height: 4
+  m_Offset: {x: 0, y: 0}
+  m_Border: {x: 0, y: 0, z: 0, w: 0}
+  m_PixelsToUnits: 4
+  m_Pivot: {x: 0.5, y: 0.5}
+  m_Extrude: 0
+  m_IsPolygon: 0
+  m_AtlasName: 
+  m_PackingTag: 
+  m_RenderDataKey:
+    00000000000000000000000000000000: 0
+  m_AtlasTags: []
+  m_SpriteAtlas: {fileID: 0}
+  m_RD:
+    serializedVersion: 3
+    texture: {fileID: 0}
+    alphaTexture: {fileID: 0}
+    secondaryTextures: []
+    m_SubMeshes:
+    - serializedVersion: 2
+      firstByte: 0
+      indexCount: 6
+      topology: 0
+      baseVertex: 0
+      firstVertex: 0
+      vertexCount: 4
+      localAABB:
+        m_Center: {x: 0, y: 0, z: 0}
+        m_Extent: {x: 0, y: 0, z: 0}
+    m_IndexBuffer: 000001000200020001000300
+    m_VertexData:
+      serializedVersion: 3
+      m_VertexCount: 4
+      m_Channels:
+      - stream: 0
+        offset: 0
+        format: 0
+        dimension: 3
+      - stream: 0
+        offset: 0
+        format: 0
+        dimension: 0
+      - stream: 0
+        offset: 0
+        format: 0
+        dimension: 0
+      - stream: 0
+        offset: 0
+        format: 0
+        dimension: 0
+      - stream: 1
+        offset: 0
+        format: 0
+        dimension: 2
+      - stream: 0
+        offset: 0
+        format: 0
+        dimension: 0
+      - stream: 0
+        offset: 0
+        format: 0
+        dimension: 0
+      - stream: 0
+        offset: 0
+        format: 0
+        dimension: 0
+      - stream: 0
+        offset: 0
+        format: 0
+        dimension: 0
+      - stream: 0
+        offset: 0
+        format: 0
+        dimension: 0
+      - stream: 0
+        offset: 0
+        format: 0
+        dimension: 0
+      - stream: 0
+        offset: 0
+        format: 0
+        dimension: 0
+      - stream: 0
+        offset: 0
+        format: 0
+        dimension: 0
+      - stream: 0
+        offset: 0
+        format: 0
+        dimension: 0
+      m_DataSize: 80
+      _typelessdata: 000000bf0000003f000000000000003f0000003f00000000000000bf000000bf000000000000003f000000bf000000000000000000000000000000000000000000000000000000000000000000000000
+    m_Bindpose: []
+    textureRect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 4
+      height: 4
+    textureRectOffset: {x: 0, y: 0}
+    atlasRectOffset: {x: -1, y: -1}
+    settingsRaw: 64
+    uvTransform: {x: 4, y: 2, z: 4, w: 2}
+    downscaleMultiplier: 1
+  m_AtlasRD:
+    serializedVersion: 3
+    texture: {fileID: 0}
+    alphaTexture: {fileID: 0}
+    secondaryTextures: []
+    m_SubMeshes:
+    - serializedVersion: 2
+      firstByte: 0
+      indexCount: 6
+      topology: 0
+      baseVertex: 0
+      firstVertex: 0
+      vertexCount: 4
+      localAABB:
+        m_Center: {x: 0, y: 0, z: 0}
+        m_Extent: {x: 0, y: 0, z: 0}
+    m_IndexBuffer: 000001000200020001000300
+    m_VertexData:
+      serializedVersion: 3
+      m_VertexCount: 4
+      m_Channels:
+      - stream: 0
+        offset: 0
+        format: 0
+        dimension: 3
+      - stream: 0
+        offset: 0
+        format: 0
+        dimension: 0
+      - stream: 0
+        offset: 0
+        format: 0
+        dimension: 0
+      - stream: 0
+        offset: 0
+        format: 0
+        dimension: 0
+      - stream: 1
+        offset: 0
+        format: 0
+        dimension: 2
+      - stream: 0
+        offset: 0
+        format: 0
+        dimension: 0
+      - stream: 0
+        offset: 0
+        format: 0
+        dimension: 0
+      - stream: 0
+        offset: 0
+        format: 0
+        dimension: 0
+      - stream: 0
+        offset: 0
+        format: 0
+        dimension: 0
+      - stream: 0
+        offset: 0
+        format: 0
+        dimension: 0
+      - stream: 0
+        offset: 0
+        format: 0
+        dimension: 0
+      - stream: 0
+        offset: 0
+        format: 0
+        dimension: 0
+      - stream: 0
+        offset: 0
+        format: 0
+        dimension: 0
+      - stream: 0
+        offset: 0
+        format: 0
+        dimension: 0
+      m_DataSize: 80
+      _typelessdata: 000000bf0000003f000000000000003f0000003f00000000000000bf000000bf000000000000003f000000bf000000000000000000000000000000000000000000000000000000000000000000000000
+    m_Bindpose: []
+    textureRect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 4
+      height: 4
+    textureRectOffset: {x: 0, y: 0}
+    atlasRectOffset: {x: -1, y: -1}
+    settingsRaw: 64
+    uvTransform: {x: 4, y: 2, z: 4, w: 2}
+    downscaleMultiplier: 1
+  m_PhysicsShape: []
+  m_Bones: []
+  m_SpriteID: 
 --- !u!1 &1492069190
 GameObject:
   m_ObjectHideFlags: 0
@@ -71872,6 +72092,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: beachleaf (5)
       objectReference: {fileID: 0}
+    - target: {fileID: 3479213971735578200, guid: e05be305efaa69c44a134ef4cf464d2f, type: 3}
+      propertyPath: m_TagString
+      value: herb
+      objectReference: {fileID: 0}
     - target: {fileID: 6615064581102826346, guid: e05be305efaa69c44a134ef4cf464d2f, type: 3}
       propertyPath: m_RootOrder
       value: -1
@@ -74234,6 +74458,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: beachleaf (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 3479213971735578200, guid: e05be305efaa69c44a134ef4cf464d2f, type: 3}
+      propertyPath: m_TagString
+      value: herb
+      objectReference: {fileID: 0}
     - target: {fileID: 6615064581102826346, guid: e05be305efaa69c44a134ef4cf464d2f, type: 3}
       propertyPath: m_RootOrder
       value: -1
@@ -76127,6 +76355,10 @@ PrefabInstance:
     - target: {fileID: 3479213971735578200, guid: e05be305efaa69c44a134ef4cf464d2f, type: 3}
       propertyPath: m_Name
       value: beachleaf
+      objectReference: {fileID: 0}
+    - target: {fileID: 3479213971735578200, guid: e05be305efaa69c44a134ef4cf464d2f, type: 3}
+      propertyPath: m_TagString
+      value: herb
       objectReference: {fileID: 0}
     - target: {fileID: 6615064581102826346, guid: e05be305efaa69c44a134ef4cf464d2f, type: 3}
       propertyPath: m_RootOrder
