@@ -113,21 +113,12 @@ public class GameManager : Singleton<GameManager>
    public void VilliageTrans()
    {
         SceneManager.LoadScene(1);
-        Village_caveSpawn();
    }
    public void CaveTrans()
    {
         SceneManager.LoadScene(2);
         incave = true;
    }
-    void Village_caveSpawn()
-    {
-        if (GameManager.Instance.incave && SceneManager.GetActiveScene().buildIndex == 2 )
-        {
-            GameObject cave_spawn = GameObject.FindGameObjectWithTag("CaveSwitch");
-            gameObject.transform.position = cave_spawn.transform.position;
-
-            Debug.Log("yes");
-        }
-    }
+ 
+    
 }

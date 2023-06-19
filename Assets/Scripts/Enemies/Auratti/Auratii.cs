@@ -104,7 +104,6 @@ public class Auratii : Enemy
         }
         else if(feelers.againstwall)
         {
-            Debug.Log("wall");
             state = AIstate.patrol;
         }
        
