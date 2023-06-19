@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.Collections;
 using UnityEngine;
 using UnityEngine.Experimental.Rendering;
 using UnityEngine.SceneManagement;
@@ -7,7 +8,7 @@ using UnityEngine.SceneManagement;
 public class GameManager : Singleton<GameManager>
 {
     // Start is called before the first frame update
-    private string _PlayerName;
+    private string _PlayerName = "?????";
     public bool HasHerbs, cordFirst, arvinFirst, fitsFirst, hasDocs, arvinQuestDone, narratorFirst, inConversation, inMenu;
     public int _Gold, _Health, _HealthPotions;
     private int _NumOfHerbs;
@@ -44,6 +45,7 @@ public class GameManager : Singleton<GameManager>
     void Start()
     {
         _Health = 10;
+       
     }
 
     // Update is called once per frame
