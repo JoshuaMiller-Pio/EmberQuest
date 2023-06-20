@@ -50,7 +50,7 @@ public class UIManager : MonoBehaviour
             potion2.gameObject.SetActive(false);
         }
 
-        if (GameManager.Instance.healthPotions == 2)
+        if (GameManager.Instance.healthPotions == 3)
         {
             potion.gameObject.SetActive(true);
             potion1.gameObject.SetActive(true);
@@ -61,5 +61,7 @@ public class UIManager : MonoBehaviour
     void Update()
     {
         UpdateHealthUI();
+        UpdateGoldUI();
+        UpdatePotionsUI();
     }
 }

@@ -5612,6 +5612,7 @@ GameObject:
   m_Component:
   - component: {fileID: 196422819}
   - component: {fileID: 196422818}
+  - component: {fileID: 196422820}
   m_Layer: 0
   m_Name: UIManager
   m_TagString: Untagged
@@ -5652,6 +5653,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &196422820
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 196422817}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a9fe6c0e5a1a0334daba9e2fc4621c3a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gold: 0
 --- !u!1 &198922739
 GameObject:
   m_ObjectHideFlags: 0
@@ -18307,7 +18321,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &639748237
 RectTransform:
   m_ObjectHideFlags: 0
@@ -70405,6 +70419,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 6015655049718850710, guid: 9b96f8143db579741b53d873f0a2c6eb, type: 3}
+      propertyPath: NarratorCanvas
+      value: 
+      objectReference: {fileID: 639748236}
     - target: {fileID: 6015655049718850711, guid: 9b96f8143db579741b53d873f0a2c6eb, type: 3}
       propertyPath: m_Size.x
       value: 0.98781204

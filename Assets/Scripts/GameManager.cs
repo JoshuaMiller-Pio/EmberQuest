@@ -13,7 +13,7 @@ public class GameManager : Singleton<GameManager>
     public bool HasHerbs, cordFirst, arvinFirst, fitsFirst, hasDocs, arvinQuestDone, narratorFirst, inConversation, inMenu, incave;
 
 
-    public int _Gold, _Health, _HealthPotions;
+    public int _Gold, _Health, _HealthPotions, maxHealth = 10;
     private int _NumOfHerbs;
 
 
@@ -47,8 +47,8 @@ public class GameManager : Singleton<GameManager>
     #endregion
     void Start()
     {
-        _Health = 10;
-       
+        _Health = maxHealth;
+        _Gold = 0; _HealthPotions = 1;
     }
 
     // Update is called once per frame
