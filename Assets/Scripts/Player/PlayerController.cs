@@ -9,6 +9,7 @@ public class PlayerController : MonoBehaviour
 
     Rigidbody2D rigComp;
     BoxCollider2D CollComp;
+    public static bool play_pickup;
     public GameObject legs, torso,arm, caveSpawn;
     public LayerMask ground;
     public static float angle;
@@ -17,9 +18,10 @@ public class PlayerController : MonoBehaviour
     float DirX;
     private Animator LegAniComp;
     public GameObject NarratorCanvas;
-    public float Health;
+    float Health, initialHealth;
     float scenetrans = 5;
-
+    public AudioSource walk, pickup, jump, damage;
+    bool iswalking, playonce = false;
     #region Properties
 
     public float health
@@ -51,22 +53,36 @@ public class PlayerController : MonoBehaviour
 
         }
         health = 10;
-
+        initialHealth = health;
         if(GameManager.Instance.narratorFirst == false)
         {
             NarratorCanvas.gameObject.SetActive(true);
         }
+       
     }
 
     // Update is called once per frame
     void Update()
     {
+        
         onKeyDown();
         MouseMovement();
         if (Input.GetKey(KeyCode.R))
         {
             TakeHealthPotion();
         }
+        if (play_pickup)
+        {
+            playPickup();
+            play_pickup = false;
+        }
+
+        if (iswalking && !playonce)
+        {
+            playWalk();
+            playonce = true;
+        }
+
     }
 
     #region movement
@@ -82,6 +98,7 @@ public class PlayerController : MonoBehaviour
             if (Input.GetButtonDown("Jump") && isGrounded())
             {
                 rigComp.velocity = new Vector2(rigComp.velocity.x, 5f);
+                playJump();
             }
             //left  and right movement
             rigComp.velocity = new Vector2((DirX * 5f), rigComp.velocity.y);
@@ -126,7 +143,7 @@ public class PlayerController : MonoBehaviour
         {
            // Auratii attack = collision.gameObject.GetComponent<Auratii>();
              Health -= 2;
-
+            playDamage();
             if (health <= 0)
             {
                 isDead();
@@ -180,12 +197,41 @@ public class PlayerController : MonoBehaviour
     void isWalking()
     {
         LegAniComp.SetBool("isWalking", true);
+        iswalking = true;
     }
     void isIdle()
     {
 
         LegAniComp.SetBool("isWalking", false);
+        iswalking = false;
+        pauseWalk();
+    }
+    #endregion
+
+    #region Audio
+    void playWalk()
+    {
+        walk.Play();
+    }
+    void pauseWalk()
+    {
+        walk.Pause();
+        playonce = false;
 
     }
+    void playPickup()
+    {
+        pickup.Play();
+    }
+    void playDamage()
+    {
+        damage.Play();
+    }
+    void playJump()
+    {
+        pauseWalk();
+        jump.Play();
+    } 
+
     #endregion
 }

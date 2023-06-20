@@ -46,6 +46,7 @@ public class Pickup : MonoBehaviour
         if (Input.GetKeyDown("e"))
         {
             limiter = true; //makes sure code only runs once
+            PlayerController.play_pickup = true;
             if(gameObject.tag == "herb")
             {
              GameManager.Instance.numOfHerbs++;

@@ -9,6 +9,7 @@ public class Enemy:MonoBehaviour
 {
     float health, damage;
     public LayerMask wall;
+    public AudioSource Walk, shoot, Takedamage;
     public enum AIstate { patrol = 0 , chase = 1, attack = 2 }
 
 
@@ -36,16 +37,19 @@ public class Enemy:MonoBehaviour
 
     }
 
+    private void Update()
+    {
+
+    }
 
 
 
 
 
-   
 
-   
 
-   public void EnemyDeath()
+
+    public void EnemyDeath()
     {
         Destroy(this.gameObject);
     }
@@ -61,4 +65,14 @@ public class Enemy:MonoBehaviour
       
     }
 
+
+
+   public void PlayShoot()
+    {
+        shoot.Play();
+    }
+   public void PlayTakeDamage()
+    {
+        Takedamage.Play();
+    }
 }
