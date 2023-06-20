@@ -110,6 +110,7 @@ public class GameManager : Singleton<GameManager>
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
+
    public void VilliageTrans()
    {
         SceneManager.LoadScene(1);
@@ -119,6 +120,9 @@ public class GameManager : Singleton<GameManager>
         SceneManager.LoadScene(2);
         incave = true;
    }
- 
+    public void quit()
+    {
+        Application.Quit();
+    }
     
 }
