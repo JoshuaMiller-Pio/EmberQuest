@@ -123,21 +123,6 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!82 &952678407 stripped
-AudioSource:
-  m_CorrespondingSourceObject: {fileID: 952678407, guid: 3c3e19e135af3254faf16d41ac7f21a1, type: 3}
-  m_PrefabInstance: {fileID: 285331675415318796}
-  m_PrefabAsset: {fileID: 0}
---- !u!82 &952678408 stripped
-AudioSource:
-  m_CorrespondingSourceObject: {fileID: 952678408, guid: 3c3e19e135af3254faf16d41ac7f21a1, type: 3}
-  m_PrefabInstance: {fileID: 285331675415318796}
-  m_PrefabAsset: {fileID: 0}
---- !u!82 &952678409 stripped
-AudioSource:
-  m_CorrespondingSourceObject: {fileID: 952678409, guid: 3c3e19e135af3254faf16d41ac7f21a1, type: 3}
-  m_PrefabInstance: {fileID: 285331675415318796}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1310741261
 GameObject:
   m_ObjectHideFlags: 0
@@ -631,26 +616,6 @@ PrefabInstance:
       propertyPath: Player
       value: 
       objectReference: {fileID: 1557633887}
-    - target: {fileID: 285331675415318799, guid: 3c3e19e135af3254faf16d41ac7f21a1, type: 3}
-      propertyPath: Walk
-      value: 
-      objectReference: {fileID: 952678409}
-    - target: {fileID: 285331675415318799, guid: 3c3e19e135af3254faf16d41ac7f21a1, type: 3}
-      propertyPath: shoot
-      value: 
-      objectReference: {fileID: 952678408}
-    - target: {fileID: 285331675415318799, guid: 3c3e19e135af3254faf16d41ac7f21a1, type: 3}
-      propertyPath: Takedamage
-      value: 
-      objectReference: {fileID: 952678407}
-    - target: {fileID: 285331676806378134, guid: 3c3e19e135af3254faf16d41ac7f21a1, type: 3}
-      propertyPath: m_Size.y
-      value: 55.648716
-      objectReference: {fileID: 0}
-    - target: {fileID: 285331676806378134, guid: 3c3e19e135af3254faf16d41ac7f21a1, type: 3}
-      propertyPath: m_Offset.y
-      value: -4.5479846
-      objectReference: {fileID: 0}
     - target: {fileID: 3049695308605463568, guid: 3c3e19e135af3254faf16d41ac7f21a1, type: 3}
       propertyPath: m_RootOrder
       value: 2
@@ -698,10 +663,6 @@ PrefabInstance:
     - target: {fileID: 8853964809933152564, guid: 3c3e19e135af3254faf16d41ac7f21a1, type: 3}
       propertyPath: m_Name
       value: Auratii
-      objectReference: {fileID: 0}
-    - target: {fileID: 8853964809933152564, guid: 3c3e19e135af3254faf16d41ac7f21a1, type: 3}
-      propertyPath: m_IsActive
-      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
