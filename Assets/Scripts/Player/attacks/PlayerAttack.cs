@@ -6,8 +6,8 @@ using UnityEngine.UIElements;
 
 public class PlayerAttack : MonoBehaviour
 {
-    float SpecialFiretime = 1 ;
-    float ultFiretime = 1;
+    float SpecialFiretime = 2;
+    float ultFiretime = 8;
     float BaseFiretime = 1 ;
 
     public GameObject spawn, attack, specialAttack, ult;
