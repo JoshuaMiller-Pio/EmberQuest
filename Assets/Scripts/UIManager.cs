@@ -20,7 +20,7 @@ public class UIManager : MonoBehaviour
 
     public  void UpdateGoldUI()
     {
-        goldUI.text = GameManager.Instance.gold.ToString();
+        goldUI.text = GameManager.Instance._Gold.ToString();
     }
 
     public  void UpdateHealthUI()
