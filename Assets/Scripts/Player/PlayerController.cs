@@ -136,6 +136,11 @@ public class PlayerController : MonoBehaviour
             GameManager.Instance.health = GameManager.Instance.maxHealth;
         }
     }
+    public void AddHealthPotion()
+    {
+       
+            GameManager.Instance._HealthPotions++;      
+    }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
