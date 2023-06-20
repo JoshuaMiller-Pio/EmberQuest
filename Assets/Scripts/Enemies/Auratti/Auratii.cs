@@ -55,18 +55,25 @@ public class Auratii : Enemy
             ChaseMovement();
         }
 
-        if(DistToTarget == 3 || DistToTarget == -3)
+            Debug.Log(state);
+            Debug.Log(DistToTarget);
+        if(DistToTarget <= 4 && DistToTarget >= -4)
         {
+
             state = AIstate.attack;
             if(ShootCooldown <= 0)
             {
                 Attack();
-                ShootCooldown = 1;
+                ShootCooldown = 2;
             }
         }
         else if ((DistToTarget > 10 || DistToTarget < -10) && state == AIstate.attack)
         {
             state = AIstate.patrol;
+        }
+        else
+        {
+            state = AIstate.chase;
         }
 
     }
@@ -113,6 +120,7 @@ public class Auratii : Enemy
     {
 
         Instantiate(bullet, bullet_Spawner.transform.position, Quaternion.identity);
+        PlayShoot();
     }
 
     void SpriteOrientation()
@@ -138,6 +146,7 @@ public class Auratii : Enemy
         {
             FireAttacks_SuperClass attack = collision.gameObject.GetComponent <FireAttacks_SuperClass > ();
             Health -= attack.damage;
+            PlayTakeDamage();
         }
 
         if(collision.gameObject.tag == "Player")
