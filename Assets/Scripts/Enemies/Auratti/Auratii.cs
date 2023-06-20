@@ -56,10 +56,8 @@ public class Auratii : Enemy
         }
 
             Debug.Log(state);
-            Debug.Log(DistToTarget);
         if(DistToTarget <= 4 && DistToTarget >= -4)
         {
-
             state = AIstate.attack;
             if(ShootCooldown <= 0)
             {
@@ -67,14 +65,15 @@ public class Auratii : Enemy
                 ShootCooldown = 2;
             }
         }
-        else if ((DistToTarget > 10 || DistToTarget < -10) && state == AIstate.attack)
-        {
-            state = AIstate.patrol;
-        }
-        else
+        else if ((DistToTarget > 4 || DistToTarget < -4) && (DistToTarget < 15 || DistToTarget > -15) && state == AIstate.attack)
         {
             state = AIstate.chase;
         }
+        else if((DistToTarget >= 15 || DistToTarget <= -15) )
+        {
+            state = AIstate.patrol;
+        }
+
 
     }
 
@@ -149,9 +148,9 @@ public class Auratii : Enemy
             PlayTakeDamage();
         }
 
-        if(collision.gameObject.tag == "Player")
+       if(collision.gameObject.tag == "Player")
         {
-            state = AIstate.chase;
+          state = AIstate.chase;
         } 
        
 
