@@ -147,9 +147,9 @@ public class PlayerController : MonoBehaviour
         if (collision.gameObject.tag == "EnemyProjectile")
         {
            // Auratii attack = collision.gameObject.GetComponent<Auratii>();
-             Health -= 2;
+             GameManager.Instance.health -= 2;
             playDamage();
-            if (health <= 0)
+            if (GameManager.Instance.health <= 0)
             {
                 isDead();
             }
