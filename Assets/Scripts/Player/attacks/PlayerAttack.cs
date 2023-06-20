@@ -24,17 +24,19 @@ public class PlayerAttack : MonoBehaviour
     //left click basic attack. right click special. "Q" ult
     void OnButtonClick()
     {
-        SpecialFiretime -= Time.deltaTime;
-        BaseFiretime -= Time.deltaTime;
-        
+        if(DialogueManager.inConversation == false && DialogueManager.inMenu == false)
+        {
+            SpecialFiretime -= Time.deltaTime;
+            BaseFiretime -= Time.deltaTime;
+
             if (Input.GetMouseButton(0) && BaseFiretime <= 0)
             {
                 Instantiate(attack, spawn.transform.position, Quaternion.AngleAxis(PlayerController.angle, Vector3.forward));
                 BaseFiretime = 1;
             }
-           
 
-            if(SpecialFiretime <= 0 && Input.GetMouseButton(1))
+
+            if (SpecialFiretime <= 0 && Input.GetMouseButton(1))
             {
                 Instantiate(specialAttack, spawn.transform.position, Quaternion.AngleAxis(PlayerController.angle, Vector3.forward));
                 SpecialFiretime = 2;
@@ -42,16 +44,13 @@ public class PlayerAttack : MonoBehaviour
             }
 
 
-            if ( Input.GetKeyDown("q"))
+            if (Input.GetKeyDown("q"))
             {
 
                 Instantiate(ult, spawn.transform.position, Quaternion.AngleAxis(PlayerController.angle, Vector3.forward));
                 ultFiretime = 1;
 
             }
-
-        
-
-            
+        }      
     }
 }
