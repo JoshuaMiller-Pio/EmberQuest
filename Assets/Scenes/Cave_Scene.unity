@@ -504,6 +504,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5757cda70ad733c4e994f1e7fa48cb0c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  document: {fileID: 0}
 --- !u!82 &147381578
 AudioSource:
   m_ObjectHideFlags: 0
@@ -83589,7 +83590,7 @@ Canvas:
   m_AdditionalShaderChannelsFlag: 25
   m_UpdateRectTransformForStandalone: 0
   m_SortingLayerID: 0
-  m_SortingOrder: -1
+  m_SortingOrder: 2
   m_TargetDisplay: 0
 --- !u!224 &2135702594
 RectTransform:
