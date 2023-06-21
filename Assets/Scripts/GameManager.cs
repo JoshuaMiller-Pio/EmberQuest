@@ -120,6 +120,11 @@ public class GameManager : Singleton<GameManager>
         SceneManager.LoadScene(2);
         incave = true;
    }
+
+    public void MainMenuTrans()
+    {
+        SceneManager.LoadScene(0);
+    }
     public void quit()
     {
         Application.Quit();
