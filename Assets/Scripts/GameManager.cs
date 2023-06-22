@@ -48,7 +48,7 @@ public class GameManager : Singleton<GameManager>
     void Start()
     {
         _Health = maxHealth;
-        _Gold = 0; _HealthPotions = 1;
+        _Gold = 0; _HealthPotions = 1; healthPotions = 1;
     }
 
     // Update is called once per frame
@@ -125,7 +125,7 @@ public class GameManager : Singleton<GameManager>
     {
         SceneManager.LoadScene(0);
     }
-    public void quit()
+    public void Quit()
     {
         Application.Quit();
     }
