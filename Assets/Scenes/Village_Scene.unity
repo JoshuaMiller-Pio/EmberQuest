@@ -30248,7 +30248,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_text: '"Ah not quite a seasoned seadog just yet. It''s a terrible affliction,
-    I just touch a boat and my lunch vacates me immiditately. It feeds the fish I''m
+    I just touch a boat and my lunch vacates me immediately. It feeds the fish I''m
     sure, cycle of life and all that"'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
