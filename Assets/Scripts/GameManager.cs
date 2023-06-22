@@ -125,7 +125,7 @@ public class GameManager : Singleton<GameManager>
     {
         SceneManager.LoadScene(0);
     }
-    public void quit()
+    public void Quit()
     {
         Application.Quit();
     }
