@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class InventoryManager : MonoBehaviour
 {
-    public GameObject plant, document;
+    public GameObject plant, document, journalCordText, journalArvinText;
     public TMP_Text plantCount;
 
     // Start is called before the first frame update
@@ -25,6 +25,14 @@ public class InventoryManager : MonoBehaviour
         {
             plant.SetActive(true);
             plantCount.text = "X " + GameManager.Instance.numOfHerbs.ToString();
+        }
+        if (GameManager.Instance.cordFirst)
+        {
+            journalCordText.SetActive(true);
+        }
+        if (GameManager.Instance.arvinFirst)
+        {
+            journalArvinText.SetActive(true);
         }
     }
 }
