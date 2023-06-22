@@ -11,7 +11,11 @@ public class Pickup : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        document.SetActive(true);
+        if (GameManager.Instance.hasDocs)
+        {
+            document.SetActive(false);
+        }
     }
 
     // Update is called once per frame
