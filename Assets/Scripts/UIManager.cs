@@ -13,9 +13,9 @@ public class UIManager : MonoBehaviour
     void Start()
     {
        
-        UpdateGoldUI();
+        /*UpdateGoldUI();
         UpdatePotionsUI();
-        UpdateHealthUI();
+        UpdateHealthUI();*/
     }
 
     public  void UpdateGoldUI()
