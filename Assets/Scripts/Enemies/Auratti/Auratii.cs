@@ -21,7 +21,7 @@ public class Auratii : Enemy
     Rigidbody2D RigComp;
 
 
-    Auratii() : base(50, 2)
+    Auratii() : base(30, 2)
     {
 
     }
