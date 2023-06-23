@@ -36,6 +36,11 @@ public class SceneTransition : MonoBehaviour
             
         }
     }
+
+    public void sceneMainMenuSwitch()
+    {
+        GameManager.Instance.MainMenuTrans();
+    }
     void sceneSwitchVillage()
     {
         if(time <= 0)

@@ -6,12 +6,16 @@ public class Pickup : MonoBehaviour
 {
     bool inRange = false;
     bool limiter = false;
-    public GameObject document;
+    public GameObject document, narrativePanel, documentPanel;
     
     // Start is called before the first frame update
     void Start()
     {
-        
+        document.SetActive(true);
+        if (GameManager.Instance.hasDocs)
+        {
+            document.SetActive(false);
+        }
     }
 
     // Update is called once per frame
@@ -57,6 +61,8 @@ public class Pickup : MonoBehaviour
             else if(gameObject.tag == "page")
             {
                 GameManager.Instance.hasDocs = true;
+                narrativePanel.gameObject.SetActive(true);
+                documentPanel.gameObject.SetActive(true);
                 document.SetActive(false);
             }
         }
