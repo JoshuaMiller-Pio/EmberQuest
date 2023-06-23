@@ -504,6 +504,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5757cda70ad733c4e994f1e7fa48cb0c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  document: {fileID: 0}
 --- !u!82 &147381578
 AudioSource:
   m_ObjectHideFlags: 0
@@ -1492,6 +1493,22 @@ PrefabInstance:
       propertyPath: Player
       value: 
       objectReference: {fileID: 1931211885}
+    - target: {fileID: 285331676806378134, guid: 3c3e19e135af3254faf16d41ac7f21a1, type: 3}
+      propertyPath: m_Size.x
+      value: 186.16743
+      objectReference: {fileID: 0}
+    - target: {fileID: 285331676806378134, guid: 3c3e19e135af3254faf16d41ac7f21a1, type: 3}
+      propertyPath: m_Size.y
+      value: 55.648724
+      objectReference: {fileID: 0}
+    - target: {fileID: 285331676806378134, guid: 3c3e19e135af3254faf16d41ac7f21a1, type: 3}
+      propertyPath: m_Offset.x
+      value: -82.47859
+      objectReference: {fileID: 0}
+    - target: {fileID: 285331676806378134, guid: 3c3e19e135af3254faf16d41ac7f21a1, type: 3}
+      propertyPath: m_Offset.y
+      value: -4.547981
+      objectReference: {fileID: 0}
     - target: {fileID: 3049695308605463568, guid: 3c3e19e135af3254faf16d41ac7f21a1, type: 3}
       propertyPath: m_RootOrder
       value: 6

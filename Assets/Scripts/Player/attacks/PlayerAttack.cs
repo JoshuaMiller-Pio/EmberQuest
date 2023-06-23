@@ -28,6 +28,7 @@ public class PlayerAttack : MonoBehaviour
         {
             SpecialFiretime -= Time.deltaTime;
             BaseFiretime -= Time.deltaTime;
+            ultFiretime -= Time.deltaTime;
 
             if (Input.GetMouseButton(0) && BaseFiretime <= 0)
             {
@@ -44,11 +45,11 @@ public class PlayerAttack : MonoBehaviour
             }
 
 
-            if (Input.GetKeyDown("q"))
+            if (Input.GetKeyDown("q") && ultFiretime <= 0)
             {
 
                 Instantiate(ult, spawn.transform.position, Quaternion.AngleAxis(PlayerController.angle, Vector3.forward));
-                ultFiretime = 1;
+                ultFiretime = 8;
 
             }
         }      
