@@ -40,6 +40,7 @@ public class PlayerAttack : MonoBehaviour
         {
             SpecialFiretime -= Time.deltaTime;
             BaseFiretime -= Time.deltaTime;
+            ultFiretime -= Time.deltaTime;
 
             if (Input.GetMouseButton(0) && BaseFiretime <= 0 && reloadBasic == false)
             {
