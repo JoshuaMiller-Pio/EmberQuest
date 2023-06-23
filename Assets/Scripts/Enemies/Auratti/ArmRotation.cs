@@ -14,7 +14,8 @@ public class ArmRotation : MonoBehaviour
     private void Awake()
     {
         aim = arm.GetComponent<CapsuleCollider2D>();
-        
+        Player = GameObject.FindGameObjectWithTag("Player");
+
     }
     void Start()
     {
