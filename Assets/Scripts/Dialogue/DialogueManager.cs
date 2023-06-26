@@ -8,6 +8,7 @@ public class DialogueManager : MonoBehaviour
     public static bool cordFirstDone, ArvinFirstDone ,gotPlants, ArvinQuestDone, GotEvidence, inConversation, inMenu, fitsFirstDone, narratorFirstDone;
     // Start is called before the first frame update
     [SerializeField]
+    public GameObject NarratorCanvas;
     void Start()
     {
         cordFirstDone = false;
@@ -149,6 +150,11 @@ public class DialogueManager : MonoBehaviour
         if (GameManager.Instance.narratorFirst && !narratorFirstDone)
         {
             narratorFirstDone = GameManager.Instance.narratorFirst;
+        }
+
+        if(GameManager.Instance.narratorFirst) 
+        {
+            NarratorCanvas.SetActive(false);
         }
     }
    
